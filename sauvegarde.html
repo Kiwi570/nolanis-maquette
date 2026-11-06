@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="fr" data-v="2" data-curseur>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sauvegarde en ligne : Nolanis, Strasbourg</title>
+<meta name="description" content="Sauvegarde automatique et chiffrée de vos fichiers, dans deux centres de données en France, dès 19,90 € HT par mois.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://nolanis-maquette.vercel.app/sauvegarde">
+<style>:root{--fond:#f2eee6;--texte:#17161b;--voile-fond:#e7e0d2;--ouverture-fond:#f2eee6;--menu-fond:#e7e0d2}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<link rel="preload" href="/assets/polices/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/polices/instrument-sans-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=2">
+<link rel="stylesheet" href="/assets/css/site.css?v=2">
+<link rel="modulepreload" href="/assets/js/site.js?v=2">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=2">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=2"></script>
+<meta name="theme-color" content="#f2eee6">
+<link rel="icon" href="/assets/images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nolanis">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Sauvegarde en ligne : Nolanis, Strasbourg">
+<meta property="og:description" content="Sauvegarde automatique et chiffrée de vos fichiers, dans deux centres de données en France, dès 19,90 € HT par mois.">
+<meta property="og:url" content="https://nolanis-maquette.vercel.app/sauvegarde">
+<meta property="og:image" content="https://nolanis-maquette.vercel.app/assets/partage/sauvegarde-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sauvegarde en ligne : allée de serveurs la nuit">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Nolanis","url":"https://nolanis-maquette.vercel.app/","logo":"https://nolanis-maquette.vercel.app/assets/images/logo-nolanis.png","telephone":"+33680114203","email":"contact@optemis.com","address":{"@type":"PostalAddress","streetAddress":"1, place de l'Homme de Fer","postalCode":"67000","addressLocality":"Strasbourg","addressCountry":"FR"},"areaServed":"Strasbourg, Bas-Rhin","description":"Agence de communication visuelle à Strasbourg : print et web, publicité, publipostage et e-mailing, photographie et vidéo, objets publicitaires, sauvegarde en ligne, formations."}</script>
+</head>
+<body id="haut" class="page-sauvegarde">
+<div data-voile data-forme="rideau" aria-hidden="true"><span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span><svg class="voile-moitie voile-moitie--g" viewBox="-50 -50 50 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 19 A19 19 0 0 1 -19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M-48 0 H0 M0 -48 V48"/></svg><svg class="voile-moitie voile-moitie--d" viewBox="0 -50 50 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 -19 A19 19 0 0 1 19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M0 0 H48 M0 -48 V48"/></svg><div class="voile-contenu"><span data-voile-libelle>Sauvegarde</span></div><span class="barre-controle barre-controle--voile" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span></div>
+<div class="ouverture-panneau" data-ouverture aria-hidden="true">
+  <span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+  <div class="ouverture-logo">
+    <span class="ouverture-passe passe-c"></span><span class="ouverture-passe passe-m"></span><span class="ouverture-passe passe-j"></span>
+    <img class="ouverture-tuile" src="/assets/images/logo-nolanis-480.webp" alt="" width="300" height="102">
+  </div>
+  <div class="ouverture-repere" data-ouverture-objet><svg class="repere repere--intro" viewBox="-50 -50 100 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 -19 A19 19 0 0 1 19 0 Z"/><path class="repere-quart" d="M0 0 L0 19 A19 19 0 0 1 -19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M-48 0 H48 M0 -48 V48"/></svg></div>
+  <p class="ouverture-ligne">Communication visuelle · Strasbourg</p>
+  <span class="barre-controle barre-controle--intro" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil" aria-label="Nolanis, retour à l&#39;accueil"><img class="logo-nolanis" src="/assets/images/logo-nolanis-480.webp" alt="" width="106" height="36"></a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/print-web" data-libelle="Print &amp; Web">Print &amp; Web</a></li><li><a href="/publicite" data-libelle="Publicité">Publicité</a></li><li><a href="/publipostage" data-libelle="Publipostage">Publipostage</a></li><li><a href="/photo-video" data-libelle="Photo &amp; vidéo">Photo &amp; vidéo</a></li><li><a href="/objets-publicitaires" data-libelle="Objets">Objets</a></li><li><a href="/sauvegarde" data-libelle="Sauvegarde" aria-current="page">Sauvegarde</a></li><li><a href="/formations" data-libelle="Formations">Formations</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a class="bouton" href="/contact#devis" data-libelle="Contact"><span class="bouton-long">Demander un devis</span><span class="bouton-court">Devis</span></a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span data-libelle-bouton>Menu</span></button>
+    </div>
+  </div>
+</header>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+  <ul><li style="--i:0"><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><a href="/print-web" class="menu-lien" data-libelle="Print &amp; Web">Print &amp; Web</a></li><li style="--i:2"><a href="/publicite" class="menu-lien" data-libelle="Publicité">Publicité</a></li><li style="--i:3"><a href="/publipostage" class="menu-lien" data-libelle="Publipostage">Publipostage</a></li><li style="--i:4"><a href="/photo-video" class="menu-lien" data-libelle="Photo &amp; vidéo">Photo &amp; vidéo</a></li><li style="--i:5"><a href="/objets-publicitaires" class="menu-lien" data-libelle="Objets">Objets</a></li><li style="--i:6"><a href="/sauvegarde" class="menu-lien" data-libelle="Sauvegarde" aria-current="page">Sauvegarde</a></li><li style="--i:7"><a href="/formations" class="menu-lien" data-libelle="Formations">Formations</a></li><li style="--i:8"><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li></ul>
+  <p class="menu-actions"><a class="bouton" href="/contact#devis" data-libelle="Contact">Demander un devis</a> <a class="bouton bouton--contour" href="tel:+33680114203">Appeler 06 80 11 42 03</a></p>
+  <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+  <span class="barre-controle barre-controle--menu" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span>
+</div>
+<main id="contenu" tabindex="-1" data-grille="fil">
+<section class="ouverture-page op-sauve" id="debut" data-section data-fil-point="0.03 0.94" data-gouttiere="#17161b">
+  <figure class="media op-sauve-fond" data-grok style="--cadrage:60% 50%;--cadrage-mobile:50% 70%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/ouverture-sauvegarde-mobile-640.webp 640w, /assets/images/grok/ouverture-sauvegarde-mobile-657.webp 657w" sizes="100vw">
+    <img src="/assets/images/grok/ouverture-sauvegarde-1168.webp" srcset="/assets/images/grok/ouverture-sauvegarde-640.webp 640w, /assets/images/grok/ouverture-sauvegarde-1168.webp 1168w" sizes="100vw" alt="Allée de serveurs la nuit, lumières de veille violettes" width="1168" height="657" fetchpriority="high" loading="eager" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  <div class="op-sauve-texte">
+    <div class="sauve-cadenas" data-iris-centre="disque" data-anime="gsap" data-effet="cadenas" aria-hidden="true"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="28"/><path d="M21 28 V22 a9 9 0 0 1 18 0 V28"/><rect x="17" y="28" width="26" height="18" rx="3"/></svg></div>
+    <p class="surtitre enc-m" data-anime="gsap">Sauvegarde en ligne</p>
+    <h1 class="quadri" data-grille="typo" data-effet="quadri"><span class="ligne-masque" data-superpose><span class="hero-ligne" data-anime="gsap">Vos fichiers, à l’abri</span></span></h1>
+    <p class="sauve-prix" data-prix data-info-cle data-anime="gsap">Dès 19,90 € HT par mois</p>
+    <p class="hero-intro" data-anime="gsap">Vous pensiez être à l’abri d’un problème de sauvegarde ?</p>
+    <div class="sauve-barre" data-anime="gsap" aria-hidden="true"><span class="sauve-barre-txt mono">Sauvegarde incrémentale</span><span class="sauve-piste"><span class="sauve-rempli" data-effet="barre-sauvegarde"></span><i style="left:12.5%"></i><i style="left:25%"></i><i style="left:37.5%"></i><i style="left:50%"></i><i style="left:62.5%"></i><i style="left:75%"></i><i style="left:87.5%"></i></span></div>
+    <p class="hero-actions" data-anime="gsap"><a href="/contact?service=sauvegarde#devis" class="bouton" data-libelle="Contact" data-action-principale data-survol="magnetique">Demander un devis</a> <span class="a-completer">Tarifs détaillés : à compléter</span></p>
+  </div>
+</section>
+<section class="section trajet-scene section--papier2" id="trajet" data-fil="gauche" data-grille="scene" data-entete-cache data-plein-ecran>
+  <div class="ecran-interieur">
+    <div class="depliant-tete conteneur">
+      <div><p class="surtitre enc-c" data-fil-repere>Le trajet d’un fichier</p><h2 class="titre-section" data-anime="lignes">De votre ordinateur à deux centres de données</h2></div>
+      <p class="intro">Faites défiler : le fichier part, se chiffre et se met à l’abri.</p>
+    </div>
+    <div class="trajet conteneur" data-tient data-visuel>
+      <svg class="trajet-ligne" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"><path d="M60 20 H940" stroke="currentColor" stroke-width="2" stroke-dasharray="8 8" fill="none" vector-effect="non-scaling-stroke"/></svg>
+      <span class="trajet-fichier" data-effet="trajet" aria-hidden="true"><svg class="fichier" viewBox="0 0 60 76" aria-hidden="true"><path class="f-corps" d="M4 4 H40 L56 20 V72 H4 Z"/><path class="f-coin" d="M40 4 V20 H56"/><path class="f-lignes" d="M14 34 H46 M14 44 H46 M14 54 H36"/></svg></span>
+      <ol class="trajet-stations"><li class="station" data-station="0"><span class="station-pastille" aria-hidden="true">1</span><h3>Votre ordinateur</h3><p>Windows (32 et 64 bits) ou macOS : la sauvegarde est programmée et automatique, après une installation simple.</p></li><li class="station" data-station="1"><span class="station-pastille" aria-hidden="true">2</span><h3>Le chiffrement</h3><p>Les fichiers sont chiffrés avant le transfert. Seuls les fichiers nouveaux ou modifiés partent : un historique des versions est gardé.</p></li><li class="station" data-station="2"><span class="station-pastille" aria-hidden="true">3</span><h3>Deux centres de données</h3><p>Vos données sont stockées dans deux centres de données en France, et assurées par Allianz.</p></li><li class="station" data-station="3"><span class="station-pastille" aria-hidden="true">4</span><h3>Partout</h3><p>Vos fichiers restent accessibles depuis tout ordinateur, iPad ou iPhone relié à Internet.</p></li></ol>
+    </div>
+  </div>
+</section>
+<section class="section conteneur" id="panne" data-fil="gauche">
+  <p class="surtitre enc-j" data-fil-repere>Testez</p>
+  <h2 class="titre-section" data-anime="lignes" data-axes>Une panne, et après ?</h2>
+  <p class="intro" data-anime>Choisissez ce qui arrive : le fichier disparaît, puis revient depuis la sauvegarde.</p>
+  <div class="panne" data-panne data-perdu="{c} : le fichier est perdu sur l’ordinateur…" data-restaure="… et restauré depuis la sauvegarde.">
+    <div class="panne-choix" role="group" aria-label="Une panne, et après ?"><button type="button" class="filtre" aria-pressed="false" data-cause="Sauvegarde irrégulière">Sauvegarde irrégulière</button><button type="button" class="filtre" aria-pressed="false" data-cause="Incendie ou dégât des eaux">Incendie ou dégât des eaux</button><button type="button" class="filtre" aria-pressed="false" data-cause="Vol de l’ordinateur portable">Vol de l’ordinateur portable</button><button type="button" class="filtre" aria-pressed="false" data-cause="Support défectueux">Support défectueux</button><button type="button" class="filtre" aria-pressed="false" data-cause="Support perdu">Support perdu</button><button type="button" class="filtre" aria-pressed="false" data-cause="Erreur humaine">Erreur humaine</button></div>
+    <div class="panne-scene" data-visuel aria-hidden="true">
+      <div class="panne-poste"><span class="panne-ecran"><span class="panne-fichier" data-effet="panne"><svg class="fichier" viewBox="0 0 60 76" aria-hidden="true"><path class="f-corps" d="M4 4 H40 L56 20 V72 H4 Z"/><path class="f-coin" d="M40 4 V20 H56"/><path class="f-lignes" d="M14 34 H46 M14 44 H46 M14 54 H36"/></svg></span></span><span class="panne-pied"></span></div>
+      <svg class="panne-fleche" viewBox="0 0 200 60"><path d="M190 30 C 140 -10, 60 -10, 10 30" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="6 6"/><path d="M10 30 l10 -10 M10 30 l14 2" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+      <div class="panne-nuage"><svg viewBox="0 0 120 80"><path d="M30 66 H94 a22 22 0 0 0 -4 -44 a28 28 0 0 0 -52 6 a18 18 0 0 0 -8 38 Z"/></svg><span class="mono">×2 · France</span></div>
+    </div>
+    <p class="panne-etat mono" data-panne-etat role="status" aria-live="polite"></p>
+  </div>
+</section>
+<section class="section section--papier2" id="fin" data-fil="gauche">
+  <div class="conteneur appel">
+    <div>
+      <p class="surtitre enc-t" data-fil-repere>Demander un devis</p>
+      <h2 class="titre-section" data-anime="lignes">Mettre vos fichiers à l’abri</h2>
+      <p data-anime>Indiquez le nombre de postes et le volume : Nolanis vous répond avec les tarifs.</p>
+      <p class="appel-actions"><a href="/contact?service=sauvegarde#devis" class="bouton" data-libelle="Contact">Demander un devis</a> <a class="bouton bouton--contour" href="tel:+33680114203">Appeler</a></p>
+    </div>
+    <figure class="media " data-grok data-fx="parallaxe" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/service-sauvegarde-1040.webp" srcset="/assets/images/grok/service-sauvegarde-640.webp 640w, /assets/images/grok/service-sauvegarde-1040.webp 1040w" sizes="(max-width: 760px) 100vw, 45vw" alt="Disque de sauvegarde et ordinateur fermé sous une lampe de bureau" width="1040" height="780" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  </div>
+</section>
+<template data-fil-objet><g class="fil-tete"><circle r="9" class="fil-tete-anneau"/><path d="M-13 0 H13 M0 -13 V13" class="fil-tete-croix"/></g></template>
+</main>
+<footer class="pied" id="pied" data-masque-barre>
+  <div class="conteneur pied-grille">
+    <div>
+      <p><img class="logo-nolanis" src="/assets/images/logo-nolanis-480.webp" alt="" width="140" height="48"></p>
+      <p>1, place de l&#39;Homme de Fer, 67000 Strasbourg<br><a href="tel:+33680114203">06 80 11 42 03</a><br><span class="courriel">contact@optemis.com</span><br>Horaires : à compléter</p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p class="pied-titre">Sommaire</p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/print-web" data-libelle="Print &amp; Web">Print &amp; Web</a></li><li><a href="/publicite" data-libelle="Publicité">Publicité</a></li><li><a href="/publipostage" data-libelle="Publipostage">Publipostage</a></li><li><a href="/photo-video" data-libelle="Photo &amp; vidéo">Photo &amp; vidéo</a></li><li><a href="/objets-publicitaires" data-libelle="Objets">Objets</a></li><li><a href="/sauvegarde" data-libelle="Sauvegarde" aria-current="page">Sauvegarde</a></li><li><a href="/formations" data-libelle="Formations">Formations</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div>
+      <p class="pied-titre">Confort de lecture</p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="conteneur pied-bas"><span class="barre-controle barre-controle--pied" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span><p>Mentions légales · Politique de confidentialité : à compléter</p><p>Maquette : les informations marquées « à compléter » seront fournies par Nolanis.</p><p>© Nolanis</p></div>
+</footer>
+<div data-barre-fixe>
+  <a class="bouton bouton--contour" href="tel:+33680114203">Appeler</a>
+  <a class="bouton" href="/contact#devis" data-libelle="Contact">Devis</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+[
+ {
+  "cle": "calendriers",
+  "nom": "Calendriers",
+  "texte": "Toute l'année sous les yeux de vos clients.",
+  "teinte": "#0a9cc6"
+ },
+ {
+  "cle": "post-it",
+  "nom": "Post-it",
+  "texte": "Votre logo sur chaque note.",
+  "teinte": "#f0c21a"
+ },
+ {
+  "cle": "trombones",
+  "nom": "Trombones personnalisés",
+  "texte": "Un détail qui tient vos documents.",
+  "teinte": "#c8227f"
+ },
+ {
+  "cle": "blocs-notes",
+  "nom": "Blocs-notes",
+  "texte": "Vos messages à chaque page.",
+  "teinte": "#6b3579"
+ },
+ {
+  "cle": "cles-usb",
+  "nom": "Clés USB",
+  "texte": "Votre marque dans la poche.",
+  "teinte": "#17161b"
+ },
+ {
+  "cle": "magnets",
+  "nom": "Magnets",
+  "texte": "Sur le frigo, au bureau, partout.",
+  "teinte": "#c6c655"
+ }
+]

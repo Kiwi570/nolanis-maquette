@@ -9,6 +9,7 @@ CHANGELOG.md
 *.zip
 plan-images.json
 direction.json
-grok-consignes.json
+grok-consignes*.json
 *.docx
 .gitignore
+plan-images-v2.json

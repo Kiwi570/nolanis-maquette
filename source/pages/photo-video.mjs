@@ -74,8 +74,8 @@ export default (c) => {
     </div>
     ${c.media({ nom: 'grok/service-formations', alt: 'Boîtier photo et trois objectifs posés sur une table', sizes: '(max-width: 760px) 100vw, 40vw', attrs: 'data-fx="parallaxe"' })}
   </div>
-  <div class="formation-grille" data-anime="cascade">${c.donnees.formation.map((b) => html`<article class="bloc-lettre"><b aria-hidden="true">${b.lettre}</b><h3>${b.titre}</h3><p>${b.texte}</p></article>`)}</div>
-  <p class="appel-actions">${c.lien('contact', { ancre: 'devis', params: 'service=formations', classe: 'bouton', texte: c.t('photovideo.formationAction') })}</p>
+  <ul class="formation-sommaire" data-anime="cascade">${c.donnees.formation.map((b) => html`<li>${c.lien('formations', { ancre: 'bloc-' + b.lettre.toLowerCase(), texte: html`<b aria-hidden="true">${b.lettre}</b><span>${b.titre}</span>` })}</li>`)}</ul>
+  <p class="appel-actions">${c.lien('formations', { classe: 'bouton', texte: c.t('photovideo.formationRenvoi') })} ${c.lien('contact', { ancre: 'devis', params: 'service=formations', classe: 'bouton bouton--contour', texte: c.t('photovideo.formationAction') })}</p>
 </section>
 
 <section class="section section--papier2" id="fin" data-fil="gauche">

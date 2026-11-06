@@ -30,7 +30,7 @@ export default (c) => {
   return html`
 <section class="hero" id="debut" data-section data-fil-point="0.03 0.9" data-fil-sans-perle>
   ${c.media({ nom: 'grok/ouverture-accueil', alt: c.s('accueil.hero.alt'), priorite: true, classe: 'hero-photo', sizes: '100vw', cadrage: '60% 50%', cadrageMobile: '50% 60%', attrs: 'data-calage-image' })}
-  <canvas class="hero-calage" data-effet="calage" aria-hidden="true"></canvas>
+  <canvas class="hero-calage" data-effet="calage" data-ephemere aria-hidden="true"></canvas>
   <canvas class="hero-gouttes" data-effet="gouttes" aria-hidden="true" data-audit-ignorer></canvas>
   <div class="hero-cadre" aria-hidden="true">${coins()}</div>
   <div class="hero-grille">

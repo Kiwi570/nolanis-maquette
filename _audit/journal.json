@@ -114,6 +114,79 @@
       ],
       "grilleDispenses": {},
       "notes": "Scripts de la bibliothèque (outils/*.mjs, images/*.mjs) refusés à l'exécution dans cet environnement : bibliothèque consultée en lisant index.json, fiches et modules. Préparation (polices, socle) commencée pendant que l'utilisateur générait les images Grok (15:22-15:25). Boosts validés à l'aperçu : gouttes d'encre au lâcher, titres de section en quadri. Pages d'onglet et contact écrites pendant la construction de l'accueil (15:30-15:45), puis vérifiées et corrigées après l'aperçu. Regard neuf fait par un agent séparé sur les captures du premier audit."
+    },
+    {
+      "version": 2,
+      "skill": "v10.3",
+      "perimetre": [
+        "publipostage",
+        "objets-publicitaires",
+        "sauvegarde",
+        "formations"
+      ],
+      "etapes": [
+        {
+          "etape": "plans, images et document Grok",
+          "budget": 15,
+          "debut": "2026-11-06T17:07:00+01:00",
+          "fin": "2026-11-06T17:09:00+01:00"
+        },
+        {
+          "etape": "construction : pages ajoutées",
+          "budget": 40,
+          "debut": "2026-11-06T17:09:30+01:00",
+          "fin": "2026-11-06T17:24:00+01:00"
+        },
+        {
+          "etape": "audit et corrections",
+          "budget": 20,
+          "debut": "2026-11-06T17:24:00+01:00",
+          "fin": "2026-11-06T18:18:00+01:00"
+        },
+        {
+          "etape": "livraison",
+          "budget": 5,
+          "debut": "2026-11-06T18:18:00+01:00",
+          "fin": "2026-11-06T18:22:00+01:00"
+        }
+      ],
+      "attentes": [
+        {
+          "pour": "choix de la suite (v2)",
+          "debut": "2026-11-06T17:05:00+01:00",
+          "fin": "2026-11-06T17:07:00+01:00"
+        },
+        {
+          "pour": "validation du plan v2",
+          "debut": "2026-11-06T17:09:00+01:00",
+          "fin": "2026-11-06T17:09:22+01:00"
+        },
+        {
+          "pour": "images Grok v2",
+          "debut": "2026-11-06T17:09:22+01:00",
+          "fin": "2026-11-06T17:11:00+01:00"
+        }
+      ],
+      "allersRetours": 1,
+      "modules": [
+        "bac-a-feuilleter (adapté à la main)",
+        "envol-vers-le-panier (adapté à la main)"
+      ],
+      "audit": {
+        "niveau": "standard",
+        "echecsPremierPassage": 28,
+        "relances": 3,
+        "corrections": [
+          "images de partage des 4 pages générées (absentes au premier passage)",
+          "navigation sans JavaScript sur téléphone : liens sur deux rangées au lieu d'une rangée qui débordait, zones tactiles de 44 px",
+          "section Programme (Formations) : molette déclarée comme visuel ; enveloppes de l'appel Publipostage agrandies",
+          "Sauvegarde 320×568 : ouverture resserrée, bouton du devis dans le premier écran",
+          "accueil : canevas du calage marqué éphémère (il passe la main à la photo une fois calé, voulu)"
+        ]
+      },
+      "effetsRetires": [],
+      "grilleDispenses": {},
+      "notes": "Audit standard v2 : 28 échecs au premier passage (dont 20 de navigation sans JavaScript dus aux 9 liens), 0 après corrections (relances ciblées fichiers, mesures, films sur toutes les pages, puis mouvement et parcours sur les 4 nouvelles pages). Images Grok v2 reçues à 17:11, construction des pages commencée pendant l'attente."
     }
   ]
 }

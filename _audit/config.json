@@ -4,7 +4,11 @@
     "/",
     "/print-web",
     "/publicite",
+    "/publipostage",
     "/photo-video",
+    "/objets-publicitaires",
+    "/sauvegarde",
+    "/formations",
     "/contact"
   ],
   "effets": [
@@ -30,7 +34,21 @@
     "tampon",
     "bat",
     "fin-loupe",
-    "bon-tampon"
+    "bon-tampon",
+    "cachet",
+    "poste",
+    "delai",
+    "envol-enveloppes",
+    "pose",
+    "impression",
+    "presentoir",
+    "cadenas",
+    "barre-sauvegarde",
+    "trajet",
+    "panne",
+    "mise-au-point",
+    "molette",
+    "tirages"
   ],
   "grille": {
     "dispenses": {}

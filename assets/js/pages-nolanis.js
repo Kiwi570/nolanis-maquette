@@ -1,7 +1,7 @@
 /* Effets des pages intérieures de Nolanis : dépliant (Print & Web), chemin de fer (Publicité),
    table lumineuse, compte-fils, planche contact et montage (Photo & vidéo), devis et tampon BON À TIRER (Contact). */
-import { boucle, etat, rafraichir, suivre, lacher } from './socle/index.js?v=1';
-import { etroit, scrubVar } from './effets-nolanis.js?v=1';
+import { boucle, etat, rafraichir, suivre, lacher } from './socle/index.js?v=2';
+import { etroit, scrubVar } from './effets-nolanis.js?v=2';
 
 const gsap = window.gsap;
 const ST = window.ScrollTrigger;

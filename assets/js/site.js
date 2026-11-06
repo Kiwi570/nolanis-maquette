@@ -2,9 +2,10 @@
    les boucles, les mesures et la bibliothèque d'effets (data-anime, data-fx, data-survol) ; ici, seulement
    ce qui est propre à Nolanis. Intro (moins de 3 s) : traits de coupe, logo imprimé en trois passages,
    repère de calage qui glisse jusqu'à l'objet d'ouverture de la page (versObjet), puis la page s'ouvre sur lui. */
-import { demarrer, etat, versObjet } from './socle/index.js?v=1';
-import { initCalage, calage, quadriAuDefilement, imprimer, encre, fil, liasse, imposition, etapes, sechoir, enveloppe, titresQuadri } from './effets-nolanis.js?v=1';
-import { depliant, cheminDeFer, compteFils, planche, montage, devis, mouvementsPages } from './pages-nolanis.js?v=1';
+import { demarrer, etat, versObjet } from './socle/index.js?v=2';
+import { initCalage, calage, quadriAuDefilement, imprimer, encre, fil, liasse, imposition, etapes, sechoir, enveloppe, titresQuadri } from './effets-nolanis.js?v=2';
+import { depliant, cheminDeFer, compteFils, planche, montage, devis, mouvementsPages } from './pages-nolanis.js?v=2';
+import { poste, delai, essai, presentoir, trajet, panne, molette, mouvementsV2, ouvrirV2, etatFinalV2 } from './pages-v2.js?v=2';
 
 const gsap = window.gsap;
 const $ = (s) => document.querySelector(s);
@@ -17,6 +18,10 @@ const OUVERTURES = {
   'print-web': { lignes: '.op-print .hero-ligne', autres: '.op-print .surtitre, .op-print .hero-intro, .op-print .hero-actions', titre: '.op-print h1' },
   publicite: { lignes: '.op-pub .hero-ligne', autres: '.op-pub .surtitre, .op-pub .hero-intro, .op-pub .rouleaux, .op-pub .hero-actions', titre: '.op-pub h1' },
   'photo-video': { lignes: '.op-photo .hero-ligne', autres: '.op-photo .surtitre, .op-photo .hero-intro, .op-photo .hero-actions', titre: '.op-photo h1' },
+  publipostage: { lignes: '.op-poste .hero-ligne', autres: '.op-poste .surtitre, .op-poste .hero-intro, .op-poste .hero-actions', titre: '.op-poste h1' },
+  'objets-publicitaires': { lignes: '.op-objets .hero-ligne', autres: '.op-objets .surtitre, .op-objets .hero-intro, .op-objets .hero-actions', titre: '.op-objets h1' },
+  sauvegarde: { lignes: '.op-sauve .hero-ligne', autres: '.op-sauve .surtitre, .op-sauve .sauve-prix, .op-sauve .hero-intro, .op-sauve .sauve-barre, .op-sauve .hero-actions', titre: '.op-sauve h1' },
+  formations: { lignes: '.op-viseur .hero-ligne', autres: '.op-viseur .surtitre, .op-viseur .hero-intro, .op-viseur .hero-actions', titre: '.op-viseur h1' },
   contact: { lignes: '.op-contact .hero-ligne', autres: '.op-contact .surtitre, .op-contact .tel-geant, .op-contact address, .op-contact .hero-actions', titre: '.op-contact h1' },
   404: { lignes: '.x-aucun', autres: '.op-404 .surtitre, .op-404 p', titre: '.op-404 h1' },
 };
@@ -30,6 +35,7 @@ function ouvrirPage(tl, t0) {
   if (page === 'print-web' && $('.volet-f--couverture')) tl.fromTo('.volet-f--couverture', { '--ouvre': '0deg' }, { '--ouvre': '-28deg', duration: .8, ease: 'power3.inOut' }, t0 + .2);
   if (page === 'publicite' && $('.couverture')) tl.fromTo('.couverture', { opacity: 0, y: 40, rotation: 12 }, { opacity: 1, y: 0, rotation: 0, duration: .8, ease: 'power3.out' }, t0 + .1);
   if (page === 'contact' && $('.tampon')) tl.fromTo('.tampon', { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: .45, ease: 'power4.in' }, t0 + .25);
+  ouvrirV2(tl, t0, page);
   if (page === '404' && $('.op-404 h1')) tl.fromTo('.op-404 h1', { '--rot': '180deg' }, { '--rot': '0deg', duration: .9, ease: 'back.out(1.4)' }, t0 + .1);
 }
 
@@ -38,6 +44,7 @@ demarrer({
     if (page === 'accueil') { const c = initCalage(); calagePret = c && c.pret; }
     quadriAuDefilement(); encre(); liasse(); imposition(); etapes(); sechoir(); enveloppe(); titresQuadri();
     depliant(); cheminDeFer(); compteFils(); planche(); montage(); devis(); mouvementsPages();
+    poste(); delai(); essai(); presentoir(); trajet(); panne(); molette(); mouvementsV2();
     if (page !== '404') fil();
   },
   pret: [new Promise((ok) => queueMicrotask(() => ok(calagePret)))],
@@ -66,6 +73,8 @@ demarrer({
     if (!gsap) return;
     gsap.set('.hero-ligne, .hero .surtitre, .hero-intro, .hero-actions, .op-print .surtitre, .op-print .hero-intro, .op-print .hero-actions, .op-pub .surtitre, .op-pub .hero-intro, .op-pub .rouleaux, .op-pub .hero-actions, .op-photo .surtitre, .op-photo .hero-intro, .op-photo .hero-actions, .op-contact .surtitre, .op-contact .tel-geant, .op-contact address, .op-contact .hero-actions, .op-404 .surtitre, .op-404 p', { clearProps: 'transform,opacity' });
     gsap.set('.couverture, .tampon', { opacity: 1, clearProps: 'transform' });
+    if (OUVERTURES[page]) gsap.set(OUVERTURES[page].autres, { clearProps: 'transform,opacity' });
+    etatFinalV2();
     document.querySelectorAll('.quadri').forEach((el) => { el.style.removeProperty('--qx'); el.style.removeProperty('--qy'); });
     const couv = $('.volet-f--couverture'); if (couv && !couv.style.getPropertyValue('--ouvre')) couv.style.setProperty('--ouvre', '-28deg');
     const t404 = $('.op-404 h1'); if (t404) t404.style.setProperty('--rot', '0deg');

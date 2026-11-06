@@ -2,14 +2,44 @@
   "nom": "Nolanis",
   "adresse": "https://nolanis-maquette.vercel.app",
   "siteActuel": "optemis.com",
-  "version": 1,
-  "langues": ["fr"],
-  "navigation": ["accueil", "print-web", "publicite", "photo-video", "contact"],
-  "actionEntete": { "page": "contact", "ancre": "devis" },
-  "couleurs": { "fond": "#f2eee6", "texte": "#17161b", "voile": "#e7e0d2", "ouverture": "#f2eee6", "menu": "#e7e0d2", "theme": "#f2eee6" },
+  "version": 2,
+  "langues": [
+    "fr"
+  ],
+  "navigation": [
+    "accueil",
+    "print-web",
+    "publicite",
+    "publipostage",
+    "photo-video",
+    "objets-publicitaires",
+    "sauvegarde",
+    "formations",
+    "contact"
+  ],
+  "actionEntete": {
+    "page": "contact",
+    "ancre": "devis"
+  },
+  "couleurs": {
+    "fond": "#f2eee6",
+    "texte": "#17161b",
+    "voile": "#e7e0d2",
+    "ouverture": "#f2eee6",
+    "menu": "#e7e0d2",
+    "theme": "#f2eee6"
+  },
   "formeVoile": "rideau",
-  "contact": { "telephone": "06 80 11 42 03", "telephoneLien": "+33680114203", "email": "contact@optemis.com", "adresse": "1, place de l'Homme de Fer, 67000 Strasbourg" },
-  "polices": ["/assets/polices/fraunces-var.woff2", "/assets/polices/instrument-sans-var.woff2"],
+  "contact": {
+    "telephone": "06 80 11 42 03",
+    "telephoneLien": "+33680114203",
+    "email": "contact@optemis.com",
+    "adresse": "1, place de l'Homme de Fer, 67000 Strasbourg"
+  },
+  "polices": [
+    "/assets/polices/fraunces-var.woff2",
+    "/assets/polices/instrument-sans-var.woff2"
+  ],
   "imagePartage": "grok/ouverture-accueil-1168.webp",
   "curseur": true
 }

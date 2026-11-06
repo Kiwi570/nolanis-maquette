@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="fr" data-v="2" data-curseur>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Publipostage et e-mailing : Nolanis, Strasbourg</title>
+<meta name="description" content="Nolanis planifie et supervise vos mailings postaux et vos e-mailings : budget, support, conception, mise sous pli, envoi en J+1, J+4 ou J+7.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://nolanis-maquette.vercel.app/publipostage">
+<style>:root{--fond:#f2eee6;--texte:#17161b;--voile-fond:#e7e0d2;--ouverture-fond:#f2eee6;--menu-fond:#e7e0d2}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<link rel="preload" href="/assets/polices/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/polices/instrument-sans-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=2">
+<link rel="stylesheet" href="/assets/css/site.css?v=2">
+<link rel="modulepreload" href="/assets/js/site.js?v=2">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=2">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=2"></script>
+<meta name="theme-color" content="#f2eee6">
+<link rel="icon" href="/assets/images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nolanis">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Publipostage et e-mailing : Nolanis, Strasbourg">
+<meta property="og:description" content="Nolanis planifie et supervise vos mailings postaux et vos e-mailings : budget, support, conception, mise sous pli, envoi en J+1, J+4 ou J+7.">
+<meta property="og:url" content="https://nolanis-maquette.vercel.app/publipostage">
+<meta property="og:image" content="https://nolanis-maquette.vercel.app/assets/partage/publipostage-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Publipostage Nolanis : casiers de tri et enveloppes">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Nolanis","url":"https://nolanis-maquette.vercel.app/","logo":"https://nolanis-maquette.vercel.app/assets/images/logo-nolanis.png","telephone":"+33680114203","email":"contact@optemis.com","address":{"@type":"PostalAddress","streetAddress":"1, place de l'Homme de Fer","postalCode":"67000","addressLocality":"Strasbourg","addressCountry":"FR"},"areaServed":"Strasbourg, Bas-Rhin","description":"Agence de communication visuelle à Strasbourg : print et web, publicité, publipostage et e-mailing, photographie et vidéo, objets publicitaires, sauvegarde en ligne, formations."}</script>
+</head>
+<body id="haut" class="page-publipostage">
+<div data-voile data-forme="rideau" aria-hidden="true"><span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span><svg class="voile-moitie voile-moitie--g" viewBox="-50 -50 50 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 19 A19 19 0 0 1 -19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M-48 0 H0 M0 -48 V48"/></svg><svg class="voile-moitie voile-moitie--d" viewBox="0 -50 50 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 -19 A19 19 0 0 1 19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M0 0 H48 M0 -48 V48"/></svg><div class="voile-contenu"><span data-voile-libelle>Publipostage</span></div><span class="barre-controle barre-controle--voile" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span></div>
+<div class="ouverture-panneau" data-ouverture aria-hidden="true">
+  <span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+  <div class="ouverture-logo">
+    <span class="ouverture-passe passe-c"></span><span class="ouverture-passe passe-m"></span><span class="ouverture-passe passe-j"></span>
+    <img class="ouverture-tuile" src="/assets/images/logo-nolanis-480.webp" alt="" width="300" height="102">
+  </div>
+  <div class="ouverture-repere" data-ouverture-objet><svg class="repere repere--intro" viewBox="-50 -50 100 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 -19 A19 19 0 0 1 19 0 Z"/><path class="repere-quart" d="M0 0 L0 19 A19 19 0 0 1 -19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M-48 0 H48 M0 -48 V48"/></svg></div>
+  <p class="ouverture-ligne">Communication visuelle · Strasbourg</p>
+  <span class="barre-controle barre-controle--intro" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil" aria-label="Nolanis, retour à l&#39;accueil"><img class="logo-nolanis" src="/assets/images/logo-nolanis-480.webp" alt="" width="106" height="36"></a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/print-web" data-libelle="Print &amp; Web">Print &amp; Web</a></li><li><a href="/publicite" data-libelle="Publicité">Publicité</a></li><li><a href="/publipostage" data-libelle="Publipostage" aria-current="page">Publipostage</a></li><li><a href="/photo-video" data-libelle="Photo &amp; vidéo">Photo &amp; vidéo</a></li><li><a href="/objets-publicitaires" data-libelle="Objets">Objets</a></li><li><a href="/sauvegarde" data-libelle="Sauvegarde">Sauvegarde</a></li><li><a href="/formations" data-libelle="Formations">Formations</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a class="bouton" href="/contact#devis" data-libelle="Contact"><span class="bouton-long">Demander un devis</span><span class="bouton-court">Devis</span></a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span data-libelle-bouton>Menu</span></button>
+    </div>
+  </div>
+</header>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+  <ul><li style="--i:0"><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><a href="/print-web" class="menu-lien" data-libelle="Print &amp; Web">Print &amp; Web</a></li><li style="--i:2"><a href="/publicite" class="menu-lien" data-libelle="Publicité">Publicité</a></li><li style="--i:3"><a href="/publipostage" class="menu-lien" data-libelle="Publipostage" aria-current="page">Publipostage</a></li><li style="--i:4"><a href="/photo-video" class="menu-lien" data-libelle="Photo &amp; vidéo">Photo &amp; vidéo</a></li><li style="--i:5"><a href="/objets-publicitaires" class="menu-lien" data-libelle="Objets">Objets</a></li><li style="--i:6"><a href="/sauvegarde" class="menu-lien" data-libelle="Sauvegarde">Sauvegarde</a></li><li style="--i:7"><a href="/formations" class="menu-lien" data-libelle="Formations">Formations</a></li><li style="--i:8"><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li></ul>
+  <p class="menu-actions"><a class="bouton" href="/contact#devis" data-libelle="Contact">Demander un devis</a> <a class="bouton bouton--contour" href="tel:+33680114203">Appeler 06 80 11 42 03</a></p>
+  <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+  <span class="barre-controle barre-controle--menu" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span>
+</div>
+<main id="contenu" tabindex="-1" data-grille="fil">
+<section class="ouverture-page op-poste" id="debut" data-section data-fil-point="0.03 0.94">
+  <figure class="media op-poste-fond" data-grok data-fx="parallaxe" data-fx-force="8" style="--cadrage:60% 50%;--cadrage-mobile:50% 70%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/ouverture-publipostage-mobile-640.webp 640w, /assets/images/grok/ouverture-publipostage-mobile-657.webp 657w" sizes="100vw">
+    <img src="/assets/images/grok/ouverture-publipostage-1168.webp" srcset="/assets/images/grok/ouverture-publipostage-640.webp 640w, /assets/images/grok/ouverture-publipostage-1168.webp 1168w" sizes="100vw" alt="Casiers de tri remplis d&#39;enveloppes crème et violettes" width="1168" height="657" fetchpriority="high" loading="eager" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  <div class="op-poste-grille">
+    <div class="op-poste-texte">
+      <p class="surtitre enc-j" data-anime="gsap">Publipostage et e-mailing</p>
+      <h1 class="quadri" data-grille="typo" data-effet="quadri"><span class="ligne-masque" data-superpose><span class="hero-ligne" data-anime="gsap">Publipostage</span></span> <span class="ligne-masque" data-superpose><span class="hero-ligne" data-anime="gsap">et e-mailing</span></span></h1>
+      <p class="hero-intro" data-anime="gsap">Nolanis planifie et supervise vos mailings postaux et vos e-mailings, du budget jusqu&#39;à l&#39;envoi.</p>
+      <p class="hero-actions" data-anime="gsap"><a href="/contact?service=publipostage#devis" class="bouton" data-libelle="Contact" data-action-principale data-survol="magnetique">Demander un devis</a> <a class="hero-info" href="#delai" data-info-cle>Envoi en J+1, J+4 ou J+7</a></p>
+    </div>
+    <div class="cachet" data-iris-centre="disque" data-effet="cachet" data-anime="gsap" data-superpose role="img" aria-label="Cachet d&#39;oblitération">
+      <svg viewBox="-60 -60 120 120" aria-hidden="true" focusable="false"><circle r="52" class="c-cercle"/><circle r="40" class="c-cercle" stroke-width="1.2"/><path class="c-ondes" d="M58 -18 C 78 -26, 96 -10, 116 -18 S 152 -26, 170 -18 M58 0 C 78 -8, 96 8, 116 0 S 152 -8, 170 0 M58 18 C 78 10, 96 26, 116 18 S 152 10, 170 18"/><g transform="scale(.62)"><svg class="repere " viewBox="-50 -50 100 100" aria-hidden="true" focusable="false" x="-50" y="-50" width="100" height="100"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 -19 A19 19 0 0 1 19 0 Z"/><path class="repere-quart" d="M0 0 L0 19 A19 19 0 0 1 -19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M-48 0 H48 M0 -48 V48"/></svg></g></svg>
+    </div>
+  </div>
+</section>
+<section class="section poste-scene" id="parcours" data-fil="gauche" data-grille="scene" data-entete-cache data-plein-ecran>
+  <div class="ecran-interieur">
+    <div class="depliant-tete conteneur">
+      <div><p class="surtitre enc-m" data-fil-repere>Le parcours</p><h2 class="titre-section" data-anime="lignes">L&#39;enveloppe, étape par étape</h2></div>
+      <p class="intro">Faites défiler : l&#39;enveloppe passe par les cinq étapes.</p>
+    </div>
+    <div class="poste conteneur" data-tient>
+      <ol class="poste-etapes"><li class="poste-etape" data-poste="0"><span class="etape-num" aria-hidden="true">1</span><div><h3>Le budget</h3><p>On fixe ensemble le budget de l&#39;envoi.</p></div></li><li class="poste-etape" data-poste="1"><span class="etape-num" aria-hidden="true">2</span><div><h3>Le support</h3><p>Choix du format, du grammage et de la finition.</p></div></li><li class="poste-etape" data-poste="2"><span class="etape-num" aria-hidden="true">3</span><div><h3>La conception</h3><p>Brochures, dépliants, flyers ou lettres.</p></div></li><li class="poste-etape" data-poste="3"><span class="etape-num" aria-hidden="true">4</span><div><h3>La mise sous pli</h3><p>Insertion des documents, conditionnement, mise sous enveloppe.</p></div></li><li class="poste-etape" data-poste="4"><span class="etape-num" aria-hidden="true">5</span><div><h3>L&#39;envoi</h3><p>Distribution en J+1, J+4 ou J+7.</p></div></li></ol>
+      <div class="poste-visuel" data-visuel aria-hidden="true">
+        <span class="poste-feuille" data-effet="poste"></span>
+        <svg class="env env--scene" viewBox="0 0 160 110" aria-hidden="true" focusable="false"><rect class="env-corps" x="4" y="14" width="152" height="92" rx="3"/><g class="env-lettre"><rect x="18" y="4" width="124" height="70" rx="2"/><path d="M30 20 H110 M30 32 H124 M30 44 H96"/></g><path class="env-rabat" d="M4 17 L80 66 L156 17"/><path class="env-trait" d="M18 84 H70 M18 92 H54"/><rect class="env-timbre" x="122" y="26" width="24" height="28"/></svg>
+        <span class="poste-nuancier"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i></span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section conteneur" id="delai" data-fil="gauche">
+  <p class="surtitre enc-c" data-fil-repere>Le délai</p>
+  <h2 class="titre-section" data-anime="lignes" data-axes>Choisissez votre délai</h2>
+  <p class="intro" data-anime>J+1, J+4 ou J+7 : l&#39;enveloppe file jusqu&#39;à la boîte et le devis s&#39;ouvre avec ce délai.</p>
+  <div class="delai" data-delai data-choisi="Délai choisi : {d}">
+    <div class="delai-choix" role="group" aria-label="Le délai"><button type="button" class="filtre" data-jour="J+1" aria-pressed="false">J+1</button><button type="button" class="filtre" data-jour="J+4" aria-pressed="true">J+4</button><button type="button" class="filtre" data-jour="J+7" aria-pressed="false">J+7</button></div>
+    <div class="delai-route" data-visuel>
+      <svg class="delai-trace" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M10 90 C 120 20, 220 110, 330 60 S 520 30, 560 70" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="6 8" vector-effect="non-scaling-stroke"/></svg>
+      <span class="delai-env" data-effet="delai"><svg class="env " viewBox="0 0 160 110" aria-hidden="true" focusable="false"><rect class="env-corps" x="4" y="14" width="152" height="92" rx="3"/><g class="env-lettre"><rect x="18" y="4" width="124" height="70" rx="2"/><path d="M30 20 H110 M30 32 H124 M30 44 H96"/></g><path class="env-rabat" d="M4 17 L80 66 L156 17"/><path class="env-trait" d="M18 84 H70 M18 92 H54"/><rect class="env-timbre" x="122" y="26" width="24" height="28"/></svg></span>
+      <span class="delai-boite" role="img" aria-label="Boîte aux lettres d&#39;arrivée"><svg viewBox="0 0 60 70" aria-hidden="true"><rect x="6" y="18" width="48" height="46" rx="4"/><path d="M14 30 H46"/><rect x="24" y="52" width="12" height="18"/></svg></span>
+    </div>
+    <p class="delai-etat mono" data-delai-etat aria-live="polite">Délai choisi : J+4</p>
+    <p><a href="/contact?service=publipostage&amp;support=Envoi%20en%20J%2B4#devis" class="bouton" data-libelle="Contact" data-delai-lien data-grille="retour">Demander un devis avec ce délai</a></p>
+  </div>
+</section>
+<section class="section section--papier2" id="e-mailing" data-fil="gauche">
+  <div class="conteneur bloc-texte">
+    <div>
+      <p class="surtitre enc-n" data-fil-repere>L&#39;e-mailing</p>
+      <h2 class="titre-section" data-anime="lignes">La même campagne, dans la boîte de réception</h2>
+      <p data-anime>Le message prévu pour le papier est réimposé pour l&#39;e-mail : même identité, même calendrier.</p>
+      <div class="boite-mail" data-visuel aria-hidden="true"><span class="bm-barre"><i></i><i></i><i></i></span><ul class="bm-liste" data-imposition data-effet="reimposition"><li class="bm-ligne bm-ligne--nouveau"><b></b><span></span></li><li class="bm-ligne"><b></b><span></span></li><li class="bm-ligne"><b></b><span></span></li><li class="bm-ligne"><b></b><span></span></li></ul></div>
+    </div>
+    <figure class="media " data-grok data-anime="rideau" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/publipostage-mise-sous-pli-1168.webp" srcset="/assets/images/grok/publipostage-mise-sous-pli-640.webp 640w, /assets/images/grok/publipostage-mise-sous-pli-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 45vw" alt="Lettres pliées, dépliants et enveloppes vierges prêts pour la mise sous pli" width="1168" height="779" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  </div>
+</section>
+<section class="section conteneur appel-court" id="fin" data-fil="gauche">
+  <p class="surtitre enc-t" data-fil-repere>Demander un devis</p>
+  <h2 class="titre-section" data-anime="lignes">Un envoi à préparer ?</h2>
+  <p data-anime>Indiquez le nombre de destinataires et le délai : Nolanis vous répond avec le devis.</p>
+  <p class="appel-actions"><a href="/contact?service=publipostage#devis" class="bouton" data-libelle="Contact" data-survol="magnetique">Demander un devis</a> <a class="bouton bouton--contour" href="tel:+33680114203">Appeler 06 80 11 42 03</a></p>
+  <div class="appel-enveloppes" data-visuel aria-hidden="true" data-effet="envol-enveloppes"><svg class="env " viewBox="0 0 160 110" aria-hidden="true" focusable="false"><rect class="env-corps" x="4" y="14" width="152" height="92" rx="3"/><g class="env-lettre"><rect x="18" y="4" width="124" height="70" rx="2"/><path d="M30 20 H110 M30 32 H124 M30 44 H96"/></g><path class="env-rabat" d="M4 17 L80 66 L156 17"/><path class="env-trait" d="M18 84 H70 M18 92 H54"/><rect class="env-timbre" x="122" y="26" width="24" height="28"/></svg><svg class="env " viewBox="0 0 160 110" aria-hidden="true" focusable="false"><rect class="env-corps" x="4" y="14" width="152" height="92" rx="3"/><g class="env-lettre"><rect x="18" y="4" width="124" height="70" rx="2"/><path d="M30 20 H110 M30 32 H124 M30 44 H96"/></g><path class="env-rabat" d="M4 17 L80 66 L156 17"/><path class="env-trait" d="M18 84 H70 M18 92 H54"/><rect class="env-timbre" x="122" y="26" width="24" height="28"/></svg><svg class="env " viewBox="0 0 160 110" aria-hidden="true" focusable="false"><rect class="env-corps" x="4" y="14" width="152" height="92" rx="3"/><g class="env-lettre"><rect x="18" y="4" width="124" height="70" rx="2"/><path d="M30 20 H110 M30 32 H124 M30 44 H96"/></g><path class="env-rabat" d="M4 17 L80 66 L156 17"/><path class="env-trait" d="M18 84 H70 M18 92 H54"/><rect class="env-timbre" x="122" y="26" width="24" height="28"/></svg></div>
+</section>
+<template data-fil-objet><g class="fil-tete"><circle r="9" class="fil-tete-anneau"/><path d="M-13 0 H13 M0 -13 V13" class="fil-tete-croix"/></g></template>
+</main>
+<footer class="pied" id="pied" data-masque-barre>
+  <div class="conteneur pied-grille">
+    <div>
+      <p><img class="logo-nolanis" src="/assets/images/logo-nolanis-480.webp" alt="" width="140" height="48"></p>
+      <p>1, place de l&#39;Homme de Fer, 67000 Strasbourg<br><a href="tel:+33680114203">06 80 11 42 03</a><br><span class="courriel">contact@optemis.com</span><br>Horaires : à compléter</p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p class="pied-titre">Sommaire</p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/print-web" data-libelle="Print &amp; Web">Print &amp; Web</a></li><li><a href="/publicite" data-libelle="Publicité">Publicité</a></li><li><a href="/publipostage" data-libelle="Publipostage" aria-current="page">Publipostage</a></li><li><a href="/photo-video" data-libelle="Photo &amp; vidéo">Photo &amp; vidéo</a></li><li><a href="/objets-publicitaires" data-libelle="Objets">Objets</a></li><li><a href="/sauvegarde" data-libelle="Sauvegarde">Sauvegarde</a></li><li><a href="/formations" data-libelle="Formations">Formations</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div>
+      <p class="pied-titre">Confort de lecture</p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="conteneur pied-bas"><span class="barre-controle barre-controle--pied" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span><p>Mentions légales · Politique de confidentialité : à compléter</p><p>Maquette : les informations marquées « à compléter » seront fournies par Nolanis.</p><p>© Nolanis</p></div>
+</footer>
+<div data-barre-fixe>
+  <a class="bouton bouton--contour" href="tel:+33680114203">Appeler</a>
+  <a class="bouton" href="/contact#devis" data-libelle="Contact">Devis</a>
+</div>
+</body>
+</html>
