@@ -1,0 +1,6 @@
+[
+  { "lettre": "A", "titre": "Le matériel", "texte": "Maîtriser l'appareil photo numérique : ISO, balance des blancs, priorités, mode manuel, mise au point. Choisir ses objectifs (macro, téléobjectif, grand angle, focale fixe) et ses accessoires (trépied, filtres, éclairage, softbox, télécommande). Entretenir son matériel." },
+  { "lettre": "B", "titre": "La composition d'une photo", "texte": "Cadrage, règle des impairs, règle des tiers, perspective, symbolique des couleurs." },
+  { "lettre": "C", "titre": "De la théorie à la pratique", "texte": "Éclairage, profondeur de champ, flou artistique, netteté ; photos de paysages, portraits, sport et objets." },
+  { "lettre": "D", "titre": "Le post-traitement", "texte": "Gestion des fichiers (TIF, JPG, RAW), logiciels de retouche, redimensionnement, recadrage, réglages, détourage, impression." }
+]

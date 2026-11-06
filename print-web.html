@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="fr" data-v="1" data-curseur>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Print et Web : Nolanis, Strasbourg</title>
+<meta name="description" content="Cartes de visite, dépliants, catalogues, sites vitrines et e-commerce : la communication print et web de Nolanis à Strasbourg.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://nolanis-maquette.vercel.app/print-web">
+<style>:root{--fond:#f2eee6;--texte:#17161b;--voile-fond:#e7e0d2;--ouverture-fond:#f2eee6;--menu-fond:#e7e0d2}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<link rel="preload" href="/assets/polices/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/polices/instrument-sans-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f2eee6">
+<link rel="icon" href="/assets/images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nolanis">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Print et Web : Nolanis, Strasbourg">
+<meta property="og:description" content="Cartes de visite, dépliants, catalogues, sites vitrines et e-commerce : la communication print et web de Nolanis à Strasbourg.">
+<meta property="og:url" content="https://nolanis-maquette.vercel.app/print-web">
+<meta property="og:image" content="https://nolanis-maquette.vercel.app/assets/partage/print-web-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Print et web chez Nolanis : papeterie vierge sur une table">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Nolanis","url":"https://nolanis-maquette.vercel.app/","logo":"https://nolanis-maquette.vercel.app/assets/images/logo-nolanis.png","telephone":"+33680114203","email":"contact@optemis.com","address":{"@type":"PostalAddress","streetAddress":"1, place de l'Homme de Fer","postalCode":"67000","addressLocality":"Strasbourg","addressCountry":"FR"},"areaServed":"Strasbourg, Bas-Rhin","description":"Agence de communication visuelle à Strasbourg : print et web, publicité, publipostage et e-mailing, photographie et vidéo, objets publicitaires, sauvegarde en ligne, formations."}</script>
+</head>
+<body id="haut" class="page-print-web">
+<div data-voile data-forme="rideau" aria-hidden="true"><span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span><svg class="voile-moitie voile-moitie--g" viewBox="-50 -50 50 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 19 A19 19 0 0 1 -19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M-48 0 H0 M0 -48 V48"/></svg><svg class="voile-moitie voile-moitie--d" viewBox="0 -50 50 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 -19 A19 19 0 0 1 19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M0 0 H48 M0 -48 V48"/></svg><div class="voile-contenu"><span data-voile-libelle>Print &amp; Web</span></div><span class="barre-controle barre-controle--voile" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span></div>
+<div class="ouverture-panneau" data-ouverture aria-hidden="true">
+  <span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+  <div class="ouverture-logo">
+    <span class="ouverture-passe passe-c"></span><span class="ouverture-passe passe-m"></span><span class="ouverture-passe passe-j"></span>
+    <img class="ouverture-tuile" src="/assets/images/logo-nolanis-480.webp" alt="" width="300" height="102">
+  </div>
+  <div class="ouverture-repere" data-ouverture-objet><svg class="repere repere--intro" viewBox="-50 -50 100 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 -19 A19 19 0 0 1 19 0 Z"/><path class="repere-quart" d="M0 0 L0 19 A19 19 0 0 1 -19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M-48 0 H48 M0 -48 V48"/></svg></div>
+  <p class="ouverture-ligne">Communication visuelle · Strasbourg</p>
+  <span class="barre-controle barre-controle--intro" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil" aria-label="Nolanis, retour à l&#39;accueil"><img class="logo-nolanis" src="/assets/images/logo-nolanis-480.webp" alt="" width="106" height="36"></a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/print-web" data-libelle="Print &amp; Web" aria-current="page">Print &amp; Web</a></li><li><a href="/publicite" data-libelle="Publicité">Publicité</a></li><li><a href="/photo-video" data-libelle="Photo &amp; vidéo">Photo &amp; vidéo</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a class="bouton" href="/contact#devis" data-libelle="Contact"><span class="bouton-long">Demander un devis</span><span class="bouton-court">Devis</span></a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span data-libelle-bouton>Menu</span></button>
+    </div>
+  </div>
+</header>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+  <ul><li style="--i:0"><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><a href="/print-web" class="menu-lien" data-libelle="Print &amp; Web" aria-current="page">Print &amp; Web</a></li><li style="--i:2"><a href="/publicite" class="menu-lien" data-libelle="Publicité">Publicité</a></li><li style="--i:3"><a href="/photo-video" class="menu-lien" data-libelle="Photo &amp; vidéo">Photo &amp; vidéo</a></li><li style="--i:4"><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li></ul>
+  <p class="menu-actions"><a class="bouton" href="/contact#devis" data-libelle="Contact">Demander un devis</a> <a class="bouton bouton--contour" href="tel:+33680114203">Appeler 06 80 11 42 03</a></p>
+  <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+  <span class="barre-controle barre-controle--menu" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span>
+</div>
+<main id="contenu" tabindex="-1" data-grille="fil">
+<section class="ouverture-page op-print" id="debut" data-section data-fil-point="0.04 0.92">
+  <figure class="media op-print-fond" data-grok data-fx="parallaxe" data-fx-force="6" style="--cadrage:75% 50%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/fond-papier-mobile-441.webp 441w" sizes="100vw">
+    <img src="/assets/images/grok/fond-papier-1168.webp" srcset="/assets/images/grok/fond-papier-640.webp 640w, /assets/images/grok/fond-papier-1168.webp 1168w" sizes="100vw" alt="" width="1168" height="657" fetchpriority="high" loading="eager" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  <div class="op-print-texte">
+    <p class="surtitre enc-c" data-anime="gsap">Print et Web</p>
+    <h1 class="quadri" data-grille="typo" data-effet="quadri"><span class="ligne-masque" data-superpose><span class="hero-ligne" data-anime="gsap">Communication</span></span> <span class="ligne-masque" data-superpose><span class="hero-ligne" data-anime="gsap">print et web</span></span></h1>
+    <p class="hero-intro" data-anime="gsap">De la carte de visite au site e-commerce, Nolanis accompagne votre projet, sur papier comme à l&#39;écran.</p>
+    <p class="hero-actions" data-anime="gsap"><a href="/contact?service=print#devis" class="bouton" data-libelle="Contact" data-action-principale data-survol="magnetique">Demander un devis print ou web</a> <span class="hero-info" data-info-cle>10 supports imprimés · 6 services web</span></p>
+  </div>
+  <div class="depliant-ferme" data-iris-centre data-effet="depliant-couverture" role="img" aria-label="Dépliant trois volets">
+    <span class="volet-f volet-f--dessous" aria-hidden="true"></span>
+    <span class="volet-f volet-f--couverture" aria-hidden="true"><svg class="repere " viewBox="-50 -50 100 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 -19 A19 19 0 0 1 19 0 Z"/><path class="repere-quart" d="M0 0 L0 19 A19 19 0 0 1 -19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M-48 0 H48 M0 -48 V48"/></svg><span class="couverture-titre">Print · Web</span><span class="couverture-bande"></span></span>
+  </div>
+</section>
+<section class="section depliant-scene section--papier2" id="imprimes" data-fil="gauche" data-grille="scene" data-entete-cache data-plein-ecran>
+  <div class="ecran-interieur">
+    <div class="depliant-tete conteneur">
+      <div><p class="surtitre enc-m" data-fil-repere>Print et Web</p><h2 class="titre-section" data-anime="lignes">Le dépliant des imprimés</h2></div>
+      <p class="intro">Faites défiler : le dépliant s&#39;ouvre volet par volet.</p>
+    </div>
+    <div class="depliant" data-tient data-visuel>
+      <article class="volet enc-c" data-effet="depliant"><span class="verso" aria-hidden="true"><svg class="repere " viewBox="-50 -50 100 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 -19 A19 19 0 0 1 19 0 Z"/><path class="repere-quart" d="M0 0 L0 19 A19 19 0 0 1 -19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M-48 0 H48 M0 -48 V48"/></svg><span>Print · Web</span></span>
+        <p class="volet-num">Volet 1 / 3</p>
+        <h3>La correspondance</h3>
+        <ul><li>Cartes de visite</li><li>Papier à en-tête</li><li>Têtes de lettres</li><li>Cartes de correspondance</li></ul>
+        <figure class="media " data-grok style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/service-print-1040.webp" srcset="/assets/images/grok/service-print-640.webp 640w, /assets/images/grok/service-print-1040.webp 1040w" sizes="(max-width: 760px) 100vw, 30vw" alt="Papeterie vierge : cartes de visite, papier à en-tête et enveloppes" width="1040" height="780" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+      </article><article class="volet enc-m" data-effet="depliant">
+        <p class="volet-num">Volet 2 / 3</p>
+        <h3>La promotion</h3>
+        <ul><li>Prospectus et dépliants</li><li>Encarts publicitaires</li><li>Cartes d&#39;invitation</li></ul>
+        <figure class="media " data-grok style="--cadrage:50% 50%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/ouverture-accueil-mobile-640.webp 640w, /assets/images/grok/ouverture-accueil-mobile-657.webp 657w" sizes="(max-width: 760px) 100vw, 30vw">
+    <img src="/assets/images/grok/ouverture-accueil-1168.webp" srcset="/assets/images/grok/ouverture-accueil-640.webp 640w, /assets/images/grok/ouverture-accueil-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 30vw" alt="Nuanciers en éventail et pots d&#39;encre cyan, magenta et jaune" width="1168" height="657" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+      </article><article class="volet enc-j" data-effet="depliant"><span class="verso" aria-hidden="true"><svg class="repere " viewBox="-50 -50 100 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 -19 A19 19 0 0 1 19 0 Z"/><path class="repere-quart" d="M0 0 L0 19 A19 19 0 0 1 -19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M-48 0 H48 M0 -48 V48"/></svg><span>Print · Web</span></span>
+        <p class="volet-num">Volet 3 / 3</p>
+        <h3>L&#39;édition</h3>
+        <ul><li>Catalogues et brochures</li><li>Blocs-notes</li><li>Pochettes à rabats</li></ul>
+        <figure class="media " data-grok style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/publicite-livret-784.webp" srcset="/assets/images/grok/publicite-livret-480.webp 480w, /assets/images/grok/publicite-livret-784.webp 784w" sizes="(max-width: 760px) 100vw, 30vw" alt="Livret ouvert aux pages vierges, près d&#39;une fenêtre" width="784" height="1045" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="section conteneur web" id="web" data-fil="gauche">
+  <div>
+    <p class="surtitre enc-j" data-fil-repere>Le web</p>
+    <h2 class="titre-section" data-anime="lignes">La mise en page passe à l&#39;écran</h2>
+    <p class="intro" data-anime>Les mêmes blocs, réimposés pour le navigateur : sites, boutiques, catalogues, bannières, e-mailings et blogs.</p>
+    <figure class="media web-media" data-grok data-fx="onde" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/service-web-1040.webp" srcset="/assets/images/grok/service-web-640.webp 640w, /assets/images/grok/service-web-1040.webp 1040w" sizes="(max-width: 900px) 100vw, 40vw" alt="Ordinateur portable écran détourné, à côté d&#39;une feuille de maquette vierge" width="1040" height="780" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  </div>
+  <div class="navigateur" data-visuel>
+    <div class="navigateur-barre" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+    <ul class="blocs" data-imposition data-effet="reimposition" role="list"><li class="bloc-web enc-c"><strong>Sites vitrines</strong></li><li class="bloc-web enc-m"><strong>Sites de vente en ligne</strong></li><li class="bloc-web enc-j"><strong>Catalogues interactifs</strong></li><li class="bloc-web enc-n"><strong>Bannières publicitaires</strong></li><li class="bloc-web enc-t"><strong>Campagnes e-mailing</strong></li><li class="bloc-web enc-c"><strong>Blogs et CMS</strong></li></ul>
+  </div>
+</section>
+<section class="section section--papier2" id="sechoir" data-fil="gauche">
+  <div class="conteneur">
+    <p class="surtitre enc-n" data-fil-repere>Réalisations</p>
+    <h2 class="titre-section" data-anime="lignes">Au séchoir</h2>
+    <p class="intro" data-anime>Huit réalisations présentées sur le site actuel. Elles se balancent au rythme du défilement.</p>
+    <div class="sechoir">
+      <div class="sechoir-fil"><article class="tirage" id="realisation-strassbuch" data-effet="sechoir">
+        <figure class="media " style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/strassbuch-600.webp" srcset="/assets/images/site/strassbuch-600.webp 600w" sizes="(max-width: 760px) 46vw, 22vw" alt="Couverture illustrée du Strassbuch" width="600" height="600" loading="lazy" decoding="async">
+  </picture>
+</figure>
+        <h3>Le Strassbuch</h3><p>City-guide</p></article><article class="tirage" id="realisation-herrmann" data-effet="sechoir">
+        <figure class="media " style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/herrmann-600.webp" srcset="/assets/images/site/herrmann-600.webp 600w" sizes="(max-width: 760px) 46vw, 22vw" alt="Logo Herrmann, maîtres charcutiers traiteurs, sur une carte" width="600" height="600" loading="lazy" decoding="async">
+  </picture>
+</figure>
+        <h3>Herrmann</h3><p>Logo</p></article><article class="tirage" id="realisation-flyer-covid" data-effet="sechoir">
+        <figure class="media " style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/flyer-covid-600.webp" srcset="/assets/images/site/flyer-covid-600.webp 600w" sizes="(max-width: 760px) 46vw, 22vw" alt="Flyer vert et blanc consacré au Covid" width="600" height="600" loading="lazy" decoding="async">
+  </picture>
+</figure>
+        <h3>Flyer Covid</h3><p>Flyer</p></article><article class="tirage" id="realisation-manuel-droits" data-effet="sechoir">
+        <figure class="media " style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/manuel-droits-600.webp" srcset="/assets/images/site/manuel-droits-600.webp 600w" sizes="(max-width: 760px) 46vw, 22vw" alt="Manuel ouvert aux pages violettes et blanches" width="600" height="600" loading="lazy" decoding="async">
+  </picture>
+</figure>
+        <h3>Manuel des droits de l&#39;Homme</h3><p>Manuel · Congrès du Conseil de l&#39;Europe</p></article></div><div class="sechoir-fil"><article class="tirage" id="realisation-inclusive-school" data-effet="sechoir">
+        <figure class="media " style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/inclusive-school-600.webp" srcset="/assets/images/site/inclusive-school-600.webp 600w" sizes="(max-width: 760px) 46vw, 22vw" alt="Dépliant vert Inclusive School ouvert" width="600" height="600" loading="lazy" decoding="async">
+  </picture>
+</figure>
+        <h3>Inclusive School</h3><p>Dépliant · Conseil de l&#39;Europe</p></article><article class="tirage" id="realisation-argru" data-effet="sechoir">
+        <figure class="media " style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/argru-600.webp" srcset="/assets/images/site/argru-600.webp 600w" sizes="(max-width: 760px) 46vw, 22vw" alt="Site de la boulangerie Argru sur tablette et téléphone" width="600" height="600" loading="lazy" decoding="async">
+  </picture>
+</figure>
+        <h3>Boulangerie Argru</h3><p>Web</p></article><article class="tirage" id="realisation-damien-de-jong" data-effet="sechoir">
+        <figure class="media " style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/damien-de-jong-600.webp" srcset="/assets/images/site/damien-de-jong-600.webp 600w" sizes="(max-width: 760px) 46vw, 22vw" alt="Flyers verts posés sur une table en bois" width="600" height="600" loading="lazy" decoding="async">
+  </picture>
+</figure>
+        <h3>Damien De Jong</h3><p>Flyers</p></article><article class="tirage" id="realisation-stras-paysage" data-effet="sechoir">
+        <figure class="media " style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/stras-paysage-600.webp" srcset="/assets/images/site/stras-paysage-600.webp 600w" sizes="(max-width: 760px) 46vw, 22vw" alt="Site de Stras&#39;Paysage affiché sur un écran d&#39;ordinateur" width="600" height="600" loading="lazy" decoding="async">
+  </picture>
+</figure>
+        <h3>Stras&#39;Paysage</h3><p>Web</p></article></div>
+    </div>
+  </div>
+</section>
+<section class="section conteneur appel" id="fin" data-fil="gauche">
+  <div>
+    <p class="surtitre enc-t" data-fil-repere>Demander un devis</p>
+    <h2 class="titre-section" data-anime="lignes">Un imprimé, un site ?</h2>
+    <p data-anime>Le devis s&#39;ouvre avec le service déjà choisi.</p>
+    <p class="appel-actions">
+      <a href="/contact?service=print#devis" class="bouton" data-libelle="Contact" data-survol="magnetique">Demander un devis</a>
+      <a class="bouton bouton--contour" href="tel:+33680114203">Appeler 06 80 11 42 03</a>
+    </p>
+  </div>
+  <figure class="media " data-grok data-anime="rideau" style="--cadrage:50% 60%">
+  <picture>
+    <img src="/assets/images/grok/contact-atelier-1168.webp" srcset="/assets/images/grok/contact-atelier-640.webp 640w, /assets/images/grok/contact-atelier-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 45vw" alt="Établi de façonnage : tapis de coupe, règle, plioir et compte-fils" width="1168" height="584" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+</section>
+<template data-fil-objet><g class="fil-tete"><circle r="9" class="fil-tete-anneau"/><path d="M-13 0 H13 M0 -13 V13" class="fil-tete-croix"/></g></template>
+</main>
+<footer class="pied" id="pied" data-masque-barre>
+  <div class="conteneur pied-grille">
+    <div>
+      <p><img class="logo-nolanis" src="/assets/images/logo-nolanis-480.webp" alt="" width="140" height="48"></p>
+      <p>1, place de l&#39;Homme de Fer, 67000 Strasbourg<br><a href="tel:+33680114203">06 80 11 42 03</a><br><span class="courriel">contact@optemis.com</span><br>Horaires : à compléter</p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p class="pied-titre">Sommaire</p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/print-web" data-libelle="Print &amp; Web" aria-current="page">Print &amp; Web</a></li><li><a href="/publicite" data-libelle="Publicité">Publicité</a></li><li><a href="/photo-video" data-libelle="Photo &amp; vidéo">Photo &amp; vidéo</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div>
+      <p class="pied-titre">Confort de lecture</p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="conteneur pied-bas"><span class="barre-controle barre-controle--pied" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span><p>Mentions légales · Politique de confidentialité : à compléter</p><p>Maquette : les informations marquées « à compléter » seront fournies par Nolanis.</p><p>© Nolanis</p></div>
+</footer>
+<div data-barre-fixe>
+  <a class="bouton bouton--contour" href="tel:+33680114203">Appeler</a>
+  <a class="bouton" href="/contact#devis" data-libelle="Contact">Devis</a>
+</div>
+</body>
+</html>

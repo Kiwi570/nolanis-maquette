@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="fr" data-v="1" data-curseur>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Espaces publicitaires : Nolanis, Strasbourg</title>
+<meta name="description" content="Le Strassbuch (15 000 exemplaires) et le livret de l&#39;Amicale du Conseil de l&#39;Europe (5 000 exemplaires) : réservez votre espace avec Nolanis.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://nolanis-maquette.vercel.app/publicite">
+<style>:root{--fond:#f2eee6;--texte:#17161b;--voile-fond:#e7e0d2;--ouverture-fond:#f2eee6;--menu-fond:#e7e0d2}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<link rel="preload" href="/assets/polices/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/polices/instrument-sans-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f2eee6">
+<link rel="icon" href="/assets/images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nolanis">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Espaces publicitaires : Nolanis, Strasbourg">
+<meta property="og:description" content="Le Strassbuch (15 000 exemplaires) et le livret de l&#39;Amicale du Conseil de l&#39;Europe (5 000 exemplaires) : réservez votre espace avec Nolanis.">
+<meta property="og:url" content="https://nolanis-maquette.vercel.app/publicite">
+<meta property="og:image" content="https://nolanis-maquette.vercel.app/assets/partage/publicite-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Espaces publicitaires Nolanis : pile de guides imprimés">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Nolanis","url":"https://nolanis-maquette.vercel.app/","logo":"https://nolanis-maquette.vercel.app/assets/images/logo-nolanis.png","telephone":"+33680114203","email":"contact@optemis.com","address":{"@type":"PostalAddress","streetAddress":"1, place de l'Homme de Fer","postalCode":"67000","addressLocality":"Strasbourg","addressCountry":"FR"},"areaServed":"Strasbourg, Bas-Rhin","description":"Agence de communication visuelle à Strasbourg : print et web, publicité, publipostage et e-mailing, photographie et vidéo, objets publicitaires, sauvegarde en ligne, formations."}</script>
+</head>
+<body id="haut" class="page-publicite">
+<div data-voile data-forme="rideau" aria-hidden="true"><span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span><svg class="voile-moitie voile-moitie--g" viewBox="-50 -50 50 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 19 A19 19 0 0 1 -19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M-48 0 H0 M0 -48 V48"/></svg><svg class="voile-moitie voile-moitie--d" viewBox="0 -50 50 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 -19 A19 19 0 0 1 19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M0 0 H48 M0 -48 V48"/></svg><div class="voile-contenu"><span data-voile-libelle>Publicité</span></div><span class="barre-controle barre-controle--voile" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span></div>
+<div class="ouverture-panneau" data-ouverture aria-hidden="true">
+  <span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+  <div class="ouverture-logo">
+    <span class="ouverture-passe passe-c"></span><span class="ouverture-passe passe-m"></span><span class="ouverture-passe passe-j"></span>
+    <img class="ouverture-tuile" src="/assets/images/logo-nolanis-480.webp" alt="" width="300" height="102">
+  </div>
+  <div class="ouverture-repere" data-ouverture-objet><svg class="repere repere--intro" viewBox="-50 -50 100 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 -19 A19 19 0 0 1 19 0 Z"/><path class="repere-quart" d="M0 0 L0 19 A19 19 0 0 1 -19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M-48 0 H48 M0 -48 V48"/></svg></div>
+  <p class="ouverture-ligne">Communication visuelle · Strasbourg</p>
+  <span class="barre-controle barre-controle--intro" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil" aria-label="Nolanis, retour à l&#39;accueil"><img class="logo-nolanis" src="/assets/images/logo-nolanis-480.webp" alt="" width="106" height="36"></a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/print-web" data-libelle="Print &amp; Web">Print &amp; Web</a></li><li><a href="/publicite" data-libelle="Publicité" aria-current="page">Publicité</a></li><li><a href="/photo-video" data-libelle="Photo &amp; vidéo">Photo &amp; vidéo</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a class="bouton" href="/contact#devis" data-libelle="Contact"><span class="bouton-long">Demander un devis</span><span class="bouton-court">Devis</span></a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span data-libelle-bouton>Menu</span></button>
+    </div>
+  </div>
+</header>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+  <ul><li style="--i:0"><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><a href="/print-web" class="menu-lien" data-libelle="Print &amp; Web">Print &amp; Web</a></li><li style="--i:2"><a href="/publicite" class="menu-lien" data-libelle="Publicité" aria-current="page">Publicité</a></li><li style="--i:3"><a href="/photo-video" class="menu-lien" data-libelle="Photo &amp; vidéo">Photo &amp; vidéo</a></li><li style="--i:4"><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li></ul>
+  <p class="menu-actions"><a class="bouton" href="/contact#devis" data-libelle="Contact">Demander un devis</a> <a class="bouton bouton--contour" href="tel:+33680114203">Appeler 06 80 11 42 03</a></p>
+  <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+  <span class="barre-controle barre-controle--menu" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span>
+</div>
+<main id="contenu" tabindex="-1" data-grille="fil">
+<section class="ouverture-page op-pub" id="debut" data-section data-fil-point="0.03 0.94" data-gouttiere="#17161b">
+  <figure class="media op-pub-fond" data-grok style="--cadrage:70% 55%;--cadrage-mobile:50% 70%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/ouverture-publicite-mobile-640.webp 640w, /assets/images/grok/ouverture-publicite-mobile-657.webp 657w" sizes="100vw">
+    <img src="/assets/images/grok/ouverture-publicite-1168.webp" srcset="/assets/images/grok/ouverture-publicite-640.webp 640w, /assets/images/grok/ouverture-publicite-1168.webp 1168w" sizes="100vw" alt="Pile de guides imprimés vue de profil, tranches colorées" width="1168" height="657" fetchpriority="high" loading="eager" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  <div class="op-pub-grille">
+    <div>
+      <p class="surtitre enc-t" data-anime="gsap">Publicité</p>
+      <h1 class="quadri" data-grille="typo" data-effet="quadri"><span class="ligne-masque" data-superpose><span class="hero-ligne" data-anime="gsap">Achetez un espace</span></span> <span class="ligne-masque" data-superpose><span class="hero-ligne" data-anime="gsap">publicitaire efficace</span></span></h1>
+      <p class="hero-intro" data-anime="gsap">Nolanis vous propose des espaces publicitaires de choix, dans le Strassbuch et auprès de l&#39;Amicale du Conseil de l&#39;Europe.</p>
+      <ul class="rouleaux" data-anime="gsap" data-info-cle>
+        <li><strong class="chiffre" data-compteur="15000">15 000</strong><span class="chiffre-legende">exemplaires</span></li>
+        <li><strong class="chiffre" data-compteur="40">40</strong><span class="chiffre-legende">ans et plus</span></li>
+        <li><strong class="chiffre" data-compteur="5000">5 000</strong><span class="chiffre-legende">abonnés et plus</span></li>
+      </ul>
+      <p class="hero-actions" data-anime="gsap"><a class="bouton" href="#chemin-de-fer" data-action-principale data-survol="magnetique">Réserver un espace</a></p>
+    </div>
+    <div class="couverture" data-iris-centre data-effet="couverture" data-anime="gsap"><figure class="media " style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/strassbuch-600.webp" srcset="/assets/images/site/strassbuch-600.webp 600w" sizes="(max-width: 760px) 56vw, 30vw" alt="Couverture illustrée du Strassbuch" width="600" height="600" fetchpriority="high" loading="eager" decoding="async">
+  </picture>
+</figure></div>
+  </div>
+</section>
+<section class="section conteneur bloc-texte" id="strassbuch" data-fil="gauche">
+  <figure class="media " data-anime="rideau" style="--cadrage:50% 50%;aspect-ratio:992 / 750">
+  <picture>
+    <img src="/assets/images/site/strassbuch-40-992.webp" srcset="/assets/images/site/strassbuch-40-640.webp 640w, /assets/images/site/strassbuch-40-992.webp 992w" sizes="(max-width: 760px) 100vw, 45vw" alt="Double page du Strassbuch consacrée aux restaurants et aux bars de la Krutenau" width="992" height="750" loading="lazy" decoding="async">
+  </picture>
+</figure>
+  <div>
+    <p class="surtitre enc-m" data-fil-repere>Le Strassbuch</p>
+    <h2 class="titre-section" data-anime="lignes" data-axes>Le city-guide de Strasbourg</h2>
+    <p data-anime>Créé par des étudiants de l&#39;École de Management de Strasbourg et publié depuis plus de 40 ans, le Strassbuch informe le lecteur sur les bons plans et l&#39;art de vivre à Strasbourg.</p>
+    <ul class="liste-filet" data-anime="cascade"><li>Le guide imprimé, 15 000 exemplaires</li><li>Les comptes Instagram et Facebook, plus de 5 000 abonnés</li><li>Une page dédiée sur le site du Strassbuch</li></ul>
+  </div>
+</section>
+<section class="section section--papier2" id="amicale" data-fil="gauche">
+  <div class="conteneur bloc-texte bloc-texte--inverse">
+    <figure class="media " data-grok data-fx="parallaxe" style="--cadrage:50% 50%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/grok/publicite-livret-784.webp" srcset="/assets/images/grok/publicite-livret-480.webp 480w, /assets/images/grok/publicite-livret-784.webp 784w" sizes="(max-width: 760px) 100vw, 40vw" alt="Livret ouvert sur un rebord de fenêtre en septembre" width="784" height="1045" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+    <div>
+      <p class="surtitre enc-c" data-fil-repere>Amicale du Conseil de l&#39;Europe</p>
+      <h2 class="titre-section" data-anime="lignes">Le livret de septembre</h2>
+      <p data-anime>L&#39;Amicale du Conseil de l&#39;Europe publie chaque année un livret distribué en septembre, tiré à 5 000 exemplaires. Votre marque peut aussi figurer sur son site, avec une page partenaire que vous modifiez vous-même, et dans la newsletter adressée aux agents.</p>
+      <p class="mono" data-anime><span class="prix" data-prix>5 000 ex.</span> · septembre</p>
+    </div>
+  </div>
+</section>
+<section class="section chemin-scene" id="chemin-de-fer" data-fil="gauche" data-grille="scene" data-entete-cache data-plein-ecran>
+  <div class="ecran-interieur">
+    <div class="depliant-tete conteneur">
+      <div><p class="surtitre enc-j" data-fil-repere>Le chemin de fer</p><h2 class="titre-section" data-anime="lignes">Six emplacements pour votre annonce</h2></div>
+      <p class="intro">Comme sur le plan des pages d&#39;un magazine, chaque support s&#39;allume à son tour. Choisissez-en un : le devis s&#39;ouvre avec ce support.</p>
+    </div>
+    <ol class="chemin" data-tient data-visuel><li class="emplacement" data-effet="chemin-de-fer">
+      <span class="emplacement-page">Page 01 · Le Strassbuch</span>
+      <h3>Le Strassbuch imprimé</h3>
+      <p>Le city-guide des bons plans et de l&#39;art de vivre à Strasbourg, tiré à 15 000 exemplaires.</p>
+      <span class="emplacement-chiffre">15 000 ex.</span>
+      <a href="/contact?service=publicite&amp;support=strassbuch-guide#devis" class="lien-fleche" data-libelle="Contact" aria-label="Réserver cet espace : Le Strassbuch imprimé">Réserver cet espace</a>
+    </li><li class="emplacement" data-effet="chemin-de-fer">
+      <span class="emplacement-page">Page 02 · Le Strassbuch</span>
+      <h3>Instagram et Facebook</h3>
+      <p>Les comptes du Strassbuch, suivis par plus de 5 000 abonnés.</p>
+      <span class="emplacement-chiffre">5 000 abonnés et plus</span>
+      <a href="/contact?service=publicite&amp;support=strassbuch-reseaux#devis" class="lien-fleche" data-libelle="Contact" aria-label="Réserver cet espace : Instagram et Facebook">Réserver cet espace</a>
+    </li><li class="emplacement" data-effet="chemin-de-fer">
+      <span class="emplacement-page">Page 03 · Le Strassbuch</span>
+      <h3>Une page sur le site</h3>
+      <p>Une page dédiée à votre annonce sur le site du Strassbuch.</p>
+      <span class="emplacement-chiffre">lestrassbuch.fr</span>
+      <a href="/contact?service=publicite&amp;support=strassbuch-site#devis" class="lien-fleche" data-libelle="Contact" aria-label="Réserver cet espace : Une page sur le site">Réserver cet espace</a>
+    </li><li class="emplacement" data-effet="chemin-de-fer">
+      <span class="emplacement-page">Page 04 · Amicale du Conseil de l&#39;Europe</span>
+      <h3>Le livret annuel</h3>
+      <p>Distribué chaque année en septembre, tiré à 5 000 exemplaires.</p>
+      <span class="emplacement-chiffre">5 000 ex.</span>
+      <a href="/contact?service=publicite&amp;support=amicale-livret#devis" class="lien-fleche" data-libelle="Contact" aria-label="Réserver cet espace : Le livret annuel">Réserver cet espace</a>
+    </li><li class="emplacement" data-effet="chemin-de-fer">
+      <span class="emplacement-page">Page 05 · Amicale du Conseil de l&#39;Europe</span>
+      <h3>Le site de l&#39;Amicale</h3>
+      <p>Une page partenaire sur le site de l&#39;Amicale, que vous modifiez vous-même.</p>
+      <span class="emplacement-chiffre">amicale-coe.eu</span>
+      <a href="/contact?service=publicite&amp;support=amicale-site#devis" class="lien-fleche" data-libelle="Contact" aria-label="Réserver cet espace : Le site de l'Amicale">Réserver cet espace</a>
+    </li><li class="emplacement" data-effet="chemin-de-fer">
+      <span class="emplacement-page">Page 06 · Amicale du Conseil de l&#39;Europe</span>
+      <h3>La newsletter</h3>
+      <p>La lettre adressée aux agents du Conseil de l&#39;Europe.</p>
+      <span class="emplacement-chiffre">Agents du Conseil de l&#39;Europe</span>
+      <a href="/contact?service=publicite&amp;support=amicale-newsletter#devis" class="lien-fleche" data-libelle="Contact" aria-label="Réserver cet espace : La newsletter">Réserver cet espace</a>
+    </li></ol>
+    <p class="chemin-pied"><span>Formats et tarifs : à compléter</span><span>6 / 6</span></p>
+  </div>
+</section>
+<section class="section appel-encre" id="fin" data-fil="gauche"><div class="conteneur appel">
+  <div>
+    <p class="surtitre enc-t" data-fil-repere>Demander un devis</p>
+    <h2 class="titre-section" data-anime="lignes">Votre annonce, au bon endroit</h2>
+    <p data-anime>Indiquez le support et la période : Nolanis vous répond avec les formats et les tarifs.</p>
+    <p class="appel-actions"><a href="/contact?service=publicite#devis" class="bouton" data-libelle="Contact" data-survol="magnetique">Demander un devis</a> <a class="bouton bouton--contour" href="tel:+33680114203">Appeler</a></p>
+  </div>
+  <div class="bon-reservation" data-visuel aria-hidden="true"><span class="bon-titre">Bon de réservation</span><span class="bon-ligne">Support</span><span class="bon-ligne">Période</span><span class="bon-ligne">Format</span><span class="bon-tampon" data-effet="bon-tampon">Réservé</span></div>
+</div></section>
+<template data-fil-objet><g class="fil-tete"><circle r="9" class="fil-tete-anneau"/><path d="M-13 0 H13 M0 -13 V13" class="fil-tete-croix"/></g></template>
+</main>
+<footer class="pied" id="pied" data-masque-barre>
+  <div class="conteneur pied-grille">
+    <div>
+      <p><img class="logo-nolanis" src="/assets/images/logo-nolanis-480.webp" alt="" width="140" height="48"></p>
+      <p>1, place de l&#39;Homme de Fer, 67000 Strasbourg<br><a href="tel:+33680114203">06 80 11 42 03</a><br><span class="courriel">contact@optemis.com</span><br>Horaires : à compléter</p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p class="pied-titre">Sommaire</p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/print-web" data-libelle="Print &amp; Web">Print &amp; Web</a></li><li><a href="/publicite" data-libelle="Publicité" aria-current="page">Publicité</a></li><li><a href="/photo-video" data-libelle="Photo &amp; vidéo">Photo &amp; vidéo</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div>
+      <p class="pied-titre">Confort de lecture</p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="conteneur pied-bas"><span class="barre-controle barre-controle--pied" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span><p>Mentions légales · Politique de confidentialité : à compléter</p><p>Maquette : les informations marquées « à compléter » seront fournies par Nolanis.</p><p>© Nolanis</p></div>
+</footer>
+<div data-barre-fixe>
+  <a class="bouton bouton--contour" href="tel:+33680114203">Appeler</a>
+  <a class="bouton" href="/contact#devis" data-libelle="Contact">Devis</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,335 @@
+{
+ "categories": [
+  {
+   "cle": "cuisine",
+   "nom": "Cuisine"
+  },
+  {
+   "cle": "lieux",
+   "nom": "Lieux"
+  },
+  {
+   "cle": "entreprises",
+   "nom": "Entreprises et produits"
+  },
+  {
+   "cle": "paysages",
+   "nom": "Paysages"
+  },
+  {
+   "cle": "animaux",
+   "nom": "Animaux"
+  },
+  {
+   "cle": "portraits",
+   "nom": "Portraits"
+  }
+ ],
+ "photos": [
+  {
+   "n": "01",
+   "cat": "paysages",
+   "alt": "Cathédrale de Strasbourg et église orthodoxe au coucher du soleil"
+  },
+  {
+   "n": "02",
+   "cat": "paysages",
+   "alt": "Grappes de raisin sur la vigne"
+  },
+  {
+   "n": "03",
+   "cat": "lieux",
+   "alt": "Façade fleurie d'une maison alsacienne"
+  },
+  {
+   "n": "04",
+   "cat": "cuisine",
+   "alt": "Assiette dressée sur une table éclairée à la bougie"
+  },
+  {
+   "n": "05",
+   "cat": "cuisine",
+   "alt": "Assiette gastronomique et verres de vin"
+  },
+  {
+   "n": "06",
+   "cat": "cuisine",
+   "alt": "Dessert aux fraises"
+  },
+  {
+   "n": "07",
+   "cat": "cuisine",
+   "alt": "Tranches de viande rosée et légumes"
+  },
+  {
+   "n": "08",
+   "cat": "paysages",
+   "alt": "Pommes sur l'arbre"
+  },
+  {
+   "n": "09",
+   "cat": "paysages",
+   "alt": "Allée d'un parc et sa tour"
+  },
+  {
+   "n": "10",
+   "cat": "lieux",
+   "alt": "Salon contemporain aux touches rouges"
+  },
+  {
+   "n": "11",
+   "cat": "lieux",
+   "alt": "Salle de restaurant dressée"
+  },
+  {
+   "n": "12",
+   "cat": "animaux",
+   "alt": "Cerf au bord d'un étang"
+  },
+  {
+   "n": "13",
+   "cat": "cuisine",
+   "alt": "Plat dressé en hauteur"
+  },
+  {
+   "n": "14",
+   "cat": "paysages",
+   "alt": "Village et vignes d'Alsace"
+  },
+  {
+   "n": "15",
+   "cat": "animaux",
+   "alt": "Cheval bai au pré"
+  },
+  {
+   "n": "16",
+   "cat": "lieux",
+   "alt": "Chambre d'hôtel lumineuse"
+  },
+  {
+   "n": "17",
+   "cat": "lieux",
+   "alt": "Chambre d'hôtel et plateau de petit-déjeuner"
+  },
+  {
+   "n": "18",
+   "cat": "lieux",
+   "alt": "Espace bien-être avec bain à remous"
+  },
+  {
+   "n": "19",
+   "cat": "entreprises",
+   "alt": "Meuble télévision laqué blanc"
+  },
+  {
+   "n": "20",
+   "cat": "lieux",
+   "alt": "Chambre aux poutres apparentes"
+  },
+  {
+   "n": "21",
+   "cat": "paysages",
+   "alt": "Façade de la cathédrale de Strasbourg"
+  },
+  {
+   "n": "22",
+   "cat": "cuisine",
+   "alt": "Dessert aux fruits frais"
+  },
+  {
+   "n": "23",
+   "cat": "cuisine",
+   "alt": "Volailles et légumes du marché"
+  },
+  {
+   "n": "24",
+   "cat": "lieux",
+   "alt": "Terrasse de restaurant sous auvent rayé"
+  },
+  {
+   "n": "25",
+   "cat": "entreprises",
+   "alt": "Tubes et emballages blancs en série"
+  },
+  {
+   "n": "26",
+   "cat": "entreprises",
+   "alt": "Pompe industrielle rouge"
+  },
+  {
+   "n": "27",
+   "cat": "cuisine",
+   "alt": "Pizza à la roquette"
+  },
+  {
+   "n": "28",
+   "cat": "lieux",
+   "alt": "Façade d'un hôtel"
+  },
+  {
+   "n": "29",
+   "cat": "lieux",
+   "alt": "Salle de restaurant boisée"
+  },
+  {
+   "n": "30",
+   "cat": "cuisine",
+   "alt": "Plateau de petit-déjeuner au lit"
+  },
+  {
+   "n": "31",
+   "cat": "portraits",
+   "alt": "Portrait de femme sur fond sombre"
+  },
+  {
+   "n": "32",
+   "cat": "portraits",
+   "alt": "Portrait souriant en extérieur"
+  },
+  {
+   "n": "33",
+   "cat": "paysages",
+   "alt": "Église dans la forêt"
+  },
+  {
+   "n": "34",
+   "cat": "cuisine",
+   "alt": "Plateau de fruits de mer"
+  },
+  {
+   "n": "35",
+   "cat": "animaux",
+   "alt": "Cygneaux dans l'herbe"
+  },
+  {
+   "n": "36",
+   "cat": "portraits",
+   "alt": "Portrait en extérieur"
+  },
+  {
+   "n": "37",
+   "cat": "lieux",
+   "alt": "Salle de réception aux chaises rouges"
+  },
+  {
+   "n": "38",
+   "cat": "lieux",
+   "alt": "Chambre d'hôtel sobre"
+  },
+  {
+   "n": "39",
+   "cat": "lieux",
+   "alt": "Boutique d'opticien"
+  },
+  {
+   "n": "41",
+   "cat": "portraits",
+   "alt": "Portrait en studio, robe verte"
+  },
+  {
+   "n": "42",
+   "cat": "animaux",
+   "alt": "Trois vaches blanches au pré"
+  },
+  {
+   "n": "43",
+   "cat": "lieux",
+   "alt": "Hall d'accueil d'un hôtel"
+  },
+  {
+   "n": "44",
+   "cat": "paysages",
+   "alt": "Arrosage d'un champ et arc-en-ciel"
+  },
+  {
+   "n": "45",
+   "cat": "cuisine",
+   "alt": "Poisson grillé sur sa sauce verte"
+  },
+  {
+   "n": "46",
+   "cat": "cuisine",
+   "alt": "Assiette colorée aux pousses"
+  },
+  {
+   "n": "47",
+   "cat": "cuisine",
+   "alt": "Poissons et crustacés frais"
+  },
+  {
+   "n": "48",
+   "cat": "cuisine",
+   "alt": "Épices en coupelles"
+  },
+  {
+   "n": "49",
+   "cat": "lieux",
+   "alt": "Salle de restaurant au plafond octogonal"
+  },
+  {
+   "n": "50",
+   "cat": "lieux",
+   "alt": "Salle de restaurant traditionnelle"
+  },
+  {
+   "n": "51",
+   "cat": "cuisine",
+   "alt": "Plat et verre de vin rouge"
+  },
+  {
+   "n": "52",
+   "cat": "lieux",
+   "alt": "Salle à manger boisée"
+  },
+  {
+   "n": "53",
+   "cat": "entreprises",
+   "alt": "Concession automobile"
+  },
+  {
+   "n": "54",
+   "cat": "lieux",
+   "alt": "Façade d'hôtel en angle de rue"
+  },
+  {
+   "n": "55",
+   "cat": "cuisine",
+   "alt": "Tarte flambée au four à bois"
+  },
+  {
+   "n": "56",
+   "cat": "paysages",
+   "alt": "Kiosque dans un parc"
+  },
+  {
+   "n": "57",
+   "cat": "lieux",
+   "alt": "Table dressée en terrasse"
+  },
+  {
+   "n": "58",
+   "cat": "lieux",
+   "alt": "Chambre d'hôtel feutrée"
+  },
+  {
+   "n": "59",
+   "cat": "entreprises",
+   "alt": "Moule industriel"
+  },
+  {
+   "n": "60",
+   "cat": "entreprises",
+   "alt": "Machine de production"
+  },
+  {
+   "n": "61",
+   "cat": "entreprises",
+   "alt": "Bâtiment industriel et silos"
+  },
+  {
+   "n": "62",
+   "cat": "cuisine",
+   "alt": "Poisson et légumes dressés"
+  }
+ ]
+}

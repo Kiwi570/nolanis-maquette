@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="fr" data-v="1" data-curseur>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nolanis : agence de communication visuelle à Strasbourg</title>
+<meta name="description" content="Print et web, publicité, publipostage, photo et vidéo, objets publicitaires : 20 ans d&#39;expérience en communication à Strasbourg.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://nolanis-maquette.vercel.app/">
+<style>:root{--fond:#f2eee6;--texte:#17161b;--voile-fond:#e7e0d2;--ouverture-fond:#f2eee6;--menu-fond:#e7e0d2}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<link rel="preload" href="/assets/polices/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/polices/instrument-sans-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f2eee6">
+<link rel="icon" href="/assets/images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nolanis">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Nolanis : agence de communication visuelle à Strasbourg">
+<meta property="og:description" content="Print et web, publicité, publipostage, photo et vidéo, objets publicitaires : 20 ans d&#39;expérience en communication à Strasbourg.">
+<meta property="og:url" content="https://nolanis-maquette.vercel.app/">
+<meta property="og:image" content="https://nolanis-maquette.vercel.app/assets/partage/accueil-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nolanis, agence de communication visuelle à Strasbourg : nuanciers et encres sur une table de travail">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Nolanis","url":"https://nolanis-maquette.vercel.app/","logo":"https://nolanis-maquette.vercel.app/assets/images/logo-nolanis.png","telephone":"+33680114203","email":"contact@optemis.com","address":{"@type":"PostalAddress","streetAddress":"1, place de l'Homme de Fer","postalCode":"67000","addressLocality":"Strasbourg","addressCountry":"FR"},"areaServed":"Strasbourg, Bas-Rhin","description":"Agence de communication visuelle à Strasbourg : print et web, publicité, publipostage et e-mailing, photographie et vidéo, objets publicitaires, sauvegarde en ligne, formations."}</script>
+</head>
+<body id="haut" class="page-accueil">
+<div data-voile data-forme="rideau" aria-hidden="true"><span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span><svg class="voile-moitie voile-moitie--g" viewBox="-50 -50 50 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 19 A19 19 0 0 1 -19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M-48 0 H0 M0 -48 V48"/></svg><svg class="voile-moitie voile-moitie--d" viewBox="0 -50 50 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 -19 A19 19 0 0 1 19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M0 0 H48 M0 -48 V48"/></svg><div class="voile-contenu"><span data-voile-libelle>Accueil</span></div><span class="barre-controle barre-controle--voile" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span></div>
+<div class="ouverture-panneau" data-ouverture aria-hidden="true">
+  <span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+  <div class="ouverture-logo">
+    <span class="ouverture-passe passe-c"></span><span class="ouverture-passe passe-m"></span><span class="ouverture-passe passe-j"></span>
+    <img class="ouverture-tuile" src="/assets/images/logo-nolanis-480.webp" alt="" width="300" height="102">
+  </div>
+  <div class="ouverture-repere" data-ouverture-objet><svg class="repere repere--intro" viewBox="-50 -50 100 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 -19 A19 19 0 0 1 19 0 Z"/><path class="repere-quart" d="M0 0 L0 19 A19 19 0 0 1 -19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M-48 0 H48 M0 -48 V48"/></svg></div>
+  <p class="ouverture-ligne">Communication visuelle · Strasbourg</p>
+  <span class="barre-controle barre-controle--intro" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil" aria-label="Nolanis, retour à l&#39;accueil" aria-current="page"><img class="logo-nolanis" src="/assets/images/logo-nolanis-480.webp" alt="" width="106" height="36"></a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/print-web" data-libelle="Print &amp; Web">Print &amp; Web</a></li><li><a href="/publicite" data-libelle="Publicité">Publicité</a></li><li><a href="/photo-video" data-libelle="Photo &amp; vidéo">Photo &amp; vidéo</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a class="bouton" href="/contact#devis" data-libelle="Contact"><span class="bouton-long">Demander un devis</span><span class="bouton-court">Devis</span></a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span data-libelle-bouton>Menu</span></button>
+    </div>
+  </div>
+</header>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+  <ul><li style="--i:0"><a href="/" class="menu-lien" data-libelle="Accueil" aria-current="page">Accueil</a></li><li style="--i:1"><a href="/print-web" class="menu-lien" data-libelle="Print &amp; Web">Print &amp; Web</a></li><li style="--i:2"><a href="/publicite" class="menu-lien" data-libelle="Publicité">Publicité</a></li><li style="--i:3"><a href="/photo-video" class="menu-lien" data-libelle="Photo &amp; vidéo">Photo &amp; vidéo</a></li><li style="--i:4"><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li></ul>
+  <p class="menu-actions"><a class="bouton" href="/contact#devis" data-libelle="Contact">Demander un devis</a> <a class="bouton bouton--contour" href="tel:+33680114203">Appeler 06 80 11 42 03</a></p>
+  <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+  <span class="barre-controle barre-controle--menu" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span>
+</div>
+<main id="contenu" tabindex="-1" data-grille="fil">
+<section class="hero" id="debut" data-section data-fil-point="0.03 0.9" data-fil-sans-perle>
+  <figure class="media hero-photo" data-grok data-calage-image style="--cadrage:60% 50%;--cadrage-mobile:50% 60%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/ouverture-accueil-mobile-640.webp 640w, /assets/images/grok/ouverture-accueil-mobile-657.webp 657w" sizes="100vw">
+    <img src="/assets/images/grok/ouverture-accueil-1168.webp" srcset="/assets/images/grok/ouverture-accueil-640.webp 640w, /assets/images/grok/ouverture-accueil-1168.webp 1168w" sizes="100vw" alt="Nuanciers en éventail, pots d&#39;encre cyan, magenta et jaune, compte-fils et règle sur une table de travail" width="1168" height="657" fetchpriority="high" loading="eager" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  <canvas class="hero-calage" data-effet="calage" aria-hidden="true"></canvas>
+  <canvas class="hero-gouttes" data-effet="gouttes" aria-hidden="true" data-audit-ignorer></canvas>
+  <div class="hero-cadre" aria-hidden="true"><span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span></div>
+  <div class="hero-grille">
+    <div class="hero-texte">
+      <p class="surtitre enc-t" data-anime="gsap">Agence de communication visuelle</p>
+      <h1 class="hero-titre quadri" data-grille="typo" data-effet="quadri"><span class="ligne-masque" data-superpose><span class="hero-ligne" data-anime="gsap">Votre agence de</span></span> <span class="ligne-masque" data-superpose><span class="hero-ligne" data-anime="gsap"><em>communication visuelle</em></span></span> <span class="ligne-masque" data-superpose><span class="hero-ligne" data-anime="gsap">à Strasbourg</span></span></h1>
+      <p class="hero-intro" data-anime="gsap">Print et web, publicité, publipostage, photo, vidéo et objets publicitaires : 20 ans d&#39;expérience, de la carte de visite au site e-commerce.</p>
+      <p class="hero-actions" data-anime="gsap">
+        <a href="/contact#devis" class="bouton" data-libelle="Contact" data-action-principale data-survol="magnetique">Demander un devis</a>
+        <a class="hero-info" href="tel:+33680114203" data-info-cle>06 80 11 42 03 · place de l&#39;Homme de Fer</a>
+      </p>
+    </div>
+    <div class="hero-objet">
+      <div class="oat" data-grille="manipuler" data-iris-centre="disque" data-effet="repere" data-souris role="img" aria-label="Repère de calage à faire tourner : il décale puis recale les quatre couleurs de la photo">
+        <div class="oat__objet">
+          <span class="oat__graduation" aria-hidden="true"></span>
+          <div class="oat__tourne"><svg class="repere oat__couche c-c" viewBox="-50 -50 100 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 -19 A19 19 0 0 1 19 0 Z"/><path class="repere-quart" d="M0 0 L0 19 A19 19 0 0 1 -19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M-48 0 H48 M0 -48 V48"/></svg><svg class="repere oat__couche c-m" viewBox="-50 -50 100 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 -19 A19 19 0 0 1 19 0 Z"/><path class="repere-quart" d="M0 0 L0 19 A19 19 0 0 1 -19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M-48 0 H48 M0 -48 V48"/></svg><svg class="repere oat__couche c-j" viewBox="-50 -50 100 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 -19 A19 19 0 0 1 19 0 Z"/><path class="repere-quart" d="M0 0 L0 19 A19 19 0 0 1 -19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M-48 0 H48 M0 -48 V48"/></svg><svg class="repere oat__couche c-n" viewBox="-50 -50 100 100" aria-hidden="true" focusable="false"><circle r="31" class="repere-anneau"/><path class="repere-quart" d="M0 0 L0 -19 A19 19 0 0 1 19 0 Z"/><path class="repere-quart" d="M0 0 L0 19 A19 19 0 0 1 -19 0 Z"/><circle r="19" class="repere-interieur"/><path class="repere-croix" d="M-48 0 H48 M0 -48 V48"/></svg></div>
+        </div>
+        <span class="oat__reflet" aria-hidden="true"></span>
+        <p class="oat__indice" aria-hidden="true">Tournez pour caler</p>
+      </div>
+      <p class="hero-etat" aria-hidden="true" data-etat-calage>Couleurs calées</p>
+    </div>
+  </div>
+</section>
+<section class="section conteneur manifeste" id="manifeste" data-fil="gauche">
+  <div>
+    <p class="surtitre enc-m" data-fil-repere>Manifeste</p>
+    <span class="manifeste-grand quadri" data-effet="quadri-defilement" aria-hidden="true">20 ans</span>
+    <p class="manifeste-texte" data-axes data-grille="typo" data-effet="encre">Nolanis accompagne vos projets de communication du premier croquis au dernier envoi : imprimés, sites, photos, vidéos, objets et espaces publicitaires.</p>
+    <p class="manifeste-signature" data-anime>20 ans d&#39;expérience dans la publicité et la communication.</p>
+  </div>
+  <figure class="media manifeste-media" data-grok data-fx="parallaxe" data-fx-force="12" style="--cadrage:45% 50%">
+  <picture>
+    <img src="/assets/images/grok/fond-encre-1168.webp" srcset="/assets/images/grok/fond-encre-640.webp 640w, /assets/images/grok/fond-encre-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 40vw" alt="" width="1168" height="657" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+</section>
+<section class="section ple section--papier2" id="services" data-fil="gauche" data-grille="scene" aria-labelledby="titre-services">
+  <div class="ple__tete conteneur">
+    <p class="surtitre enc-c" data-fil-repere>Sept savoir-faire</p>
+    <h2 class="titre-section" id="titre-services" data-anime="lignes">La liasse des épreuves</h2>
+    <p class="intro" data-anime>Chaque service a sa couleur. Faites défiler : les épreuves s&#39;empilent, comme sur la table de l&#39;atelier.</p>
+  </div>
+  <div class="ple__pile conteneur">
+    <article class="ple__planche enc-c" id="service-print" data-epingle data-tient data-effet="liasse" aria-labelledby="ple-print">
+      <div class="ple__contenu">
+        <p class="ple__cartouche"><span>Épreuve 01 / 07</span><span>Print</span></p>
+        <h3 class="ple__nom" id="ple-print">Print et Web</h3>
+        <p class="ple__texte">De la carte de visite au site de vente en ligne, sur papier comme à l&#39;écran.</p>
+        <ul class="ple__liste"><li>Cartes de visite, papier à en-tête</li><li>Dépliants, flyers, catalogues</li><li>Sites vitrines et e-commerce</li><li>Bannières et campagnes e-mailing</li></ul>
+        <a href="/print-web" class="bouton ple__lien" data-libelle="Print &amp; Web" aria-label="Voir le print et le web : Print et Web">Voir le print et le web</a>
+      </div>
+      <figure class="media ple__visuel" data-grok data-fx="zoom" data-fx-force="10" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/service-print-1040.webp" srcset="/assets/images/grok/service-print-640.webp 640w, /assets/images/grok/service-print-1040.webp 1040w" sizes="(max-width: 700px) 100vw, 45vw" alt="Papeterie vierge : cartes de visite, papier à en-tête, dépliant et enveloppes" width="1040" height="780" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+    </article><article class="ple__planche enc-m" id="service-publicite" data-epingle data-tient data-effet="liasse" aria-labelledby="ple-publicite">
+      <div class="ple__contenu">
+        <p class="ple__cartouche"><span>Épreuve 02 / 07</span><span>Publicité</span></p>
+        <h3 class="ple__nom" id="ple-publicite">Publicité</h3>
+        <p class="ple__texte">Des espaces publicitaires de choix, dans deux supports strasbourgeois.</p>
+        <ul class="ple__liste"><li>Le Strassbuch, city-guide : 15 000 exemplaires</li><li>Livret de l&#39;Amicale du Conseil de l&#39;Europe : 5 000 exemplaires</li><li>Sites, newsletter et réseaux sociaux</li></ul>
+        <a href="/publicite" class="bouton ple__lien" data-libelle="Publicité" aria-label="Voir les espaces : Publicité">Voir les espaces</a>
+      </div>
+      <figure class="media ple__visuel" data-fx="zoom" data-fx-force="10" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/strassbuch-40-992.webp" srcset="/assets/images/site/strassbuch-40-640.webp 640w, /assets/images/site/strassbuch-40-992.webp 992w" sizes="(max-width: 700px) 100vw, 45vw" alt="Double page du Strassbuch consacrée à la Krutenau" width="992" height="750" loading="lazy" decoding="async">
+  </picture>
+</figure>
+    </article><article class="ple__planche enc-j" id="service-publipostage" data-epingle data-tient data-effet="liasse" aria-labelledby="ple-publipostage">
+      <div class="ple__contenu">
+        <p class="ple__cartouche"><span>Épreuve 03 / 07</span><span>Publipostage</span></p>
+        <h3 class="ple__nom" id="ple-publipostage">Publipostage et e-mailing</h3>
+        <p class="ple__texte">Nolanis planifie et supervise vos mailings postaux et vos e-mailings.</p>
+        <ul class="ple__liste"><li>Budget et choix du support</li><li>Conception des documents</li><li>Mise sous pli et envoi en J+1, J+4 ou J+7</li></ul>
+        <a href="/contact?service=publipostage#devis" class="bouton ple__lien" data-libelle="Contact" aria-label="Demander un devis : Publipostage et e-mailing">Demander un devis</a>
+      </div>
+      <figure class="media ple__visuel" data-grok data-fx="zoom" data-fx-force="10" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/service-publipostage-1040.webp" srcset="/assets/images/grok/service-publipostage-640.webp 640w, /assets/images/grok/service-publipostage-1040.webp 1040w" sizes="(max-width: 700px) 100vw, 45vw" alt="Piles d&#39;enveloppes crème et violettes prêtes à l&#39;envoi" width="1040" height="780" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+    </article><article class="ple__planche enc-n" id="service-photo" data-epingle data-tient data-effet="liasse" aria-labelledby="ple-photo">
+      <div class="ple__contenu">
+        <p class="ple__cartouche"><span>Épreuve 04 / 07</span><span>Photo</span></p>
+        <h3 class="ple__nom" id="ple-photo">Photographie et vidéo</h3>
+        <p class="ple__texte">Photos publicitaires et vidéos, en prise de vue réelle ou en motion design.</p>
+        <ul class="ple__liste"><li>Produits, lieux et entreprises</li><li>Cuisine, paysages, animaux</li><li>Vidéo et motion design</li></ul>
+        <a href="/photo-video" class="bouton ple__lien" data-libelle="Photo &amp; vidéo" aria-label="Voir les photos : Photographie et vidéo">Voir les photos</a>
+      </div>
+      <figure class="media ple__visuel" data-fx="zoom" data-fx-force="10" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/photo-vaches-1227.webp" srcset="/assets/images/site/photo-vaches-640.webp 640w, /assets/images/site/photo-vaches-1227.webp 1227w" sizes="(max-width: 700px) 100vw, 45vw" alt="Trois vaches blanches dans un pré, photo de réalisation" width="1227" height="920" loading="lazy" decoding="async">
+  </picture>
+</figure>
+    </article><article class="ple__planche enc-c" id="service-objets" data-epingle data-tient data-effet="liasse" aria-labelledby="ple-objets">
+      <div class="ple__contenu">
+        <p class="ple__cartouche"><span>Épreuve 05 / 07</span><span>Objets</span></p>
+        <h3 class="ple__nom" id="ple-objets">Objets publicitaires</h3>
+        <p class="ple__texte">Les cadeaux publicitaires apportent de la notoriété et de la visibilité à votre marque.</p>
+        <ul class="ple__liste"><li>Calendriers, blocs-notes, post-it</li><li>Trombones personnalisés, magnets</li><li>Clés USB</li></ul>
+        <a href="/contact?service=objets#devis" class="bouton ple__lien" data-libelle="Contact" aria-label="Demander un devis : Objets publicitaires">Demander un devis</a>
+      </div>
+      <figure class="media ple__visuel" data-fx="zoom" data-fx-force="10" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/objets-1200.webp" srcset="/assets/images/site/objets-640.webp 640w, /assets/images/site/objets-1200.webp 1200w" sizes="(max-width: 700px) 100vw, 45vw" alt="Coffret cadeau avec stylos personnalisés" width="1200" height="900" loading="lazy" decoding="async">
+  </picture>
+</figure>
+    </article><article class="ple__planche enc-m" id="service-sauvegarde" data-epingle data-tient data-effet="liasse" aria-labelledby="ple-sauvegarde">
+      <div class="ple__contenu">
+        <p class="ple__cartouche"><span>Épreuve 06 / 07</span><span>Sauvegarde</span></p>
+        <h3 class="ple__nom" id="ple-sauvegarde">Sauvegarde en ligne</h3>
+        <p class="ple__texte">Vos fichiers sauvegardés automatiquement et chiffrés, dans deux centres de données en France.</p>
+        <ul class="ple__liste"><li>Windows et macOS</li><li>Sauvegarde automatique et incrémentale</li><li>Données assurées par Allianz</li><li data-prix>Dès 19,90 € HT par mois</li></ul>
+        <a href="/contact?service=sauvegarde#devis" class="bouton ple__lien" data-libelle="Contact" aria-label="Demander un devis : Sauvegarde en ligne">Demander un devis</a>
+      </div>
+      <figure class="media ple__visuel" data-grok data-fx="zoom" data-fx-force="10" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/service-sauvegarde-1040.webp" srcset="/assets/images/grok/service-sauvegarde-640.webp 640w, /assets/images/grok/service-sauvegarde-1040.webp 1040w" sizes="(max-width: 700px) 100vw, 45vw" alt="Disque de sauvegarde et ordinateur fermé sous une lampe de bureau" width="1040" height="780" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+    </article><article class="ple__planche enc-j" id="service-formations" data-epingle data-tient data-effet="liasse" aria-labelledby="ple-formations">
+      <div class="ple__contenu">
+        <p class="ple__cartouche"><span>Épreuve 07 / 07</span><span>Formations</span></p>
+        <h3 class="ple__nom" id="ple-formations">Formations</h3>
+        <p class="ple__texte">Choisir l&#39;image juste, pour attirer, retenir et informer.</p>
+        <ul class="ple__liste"><li>Le matériel</li><li>La composition d&#39;une photo</li><li>De la théorie à la pratique</li><li>Le post-traitement</li></ul>
+        <a href="/photo-video#formation" class="bouton ple__lien" data-libelle="Photo &amp; vidéo" aria-label="Voir le programme : Formations">Voir le programme</a>
+      </div>
+      <figure class="media ple__visuel" data-grok data-fx="zoom" data-fx-force="10" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/service-formations-1040.webp" srcset="/assets/images/grok/service-formations-640.webp 640w, /assets/images/grok/service-formations-1040.webp 1040w" sizes="(max-width: 700px) 100vw, 45vw" alt="Boîtier photo et trois objectifs posés sur une table" width="1040" height="780" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+    </article>
+  </div>
+</section>
+<section class="section conteneur" id="realisations" data-fil="gauche">
+  <p class="surtitre enc-j" data-fil-repere>Réalisations</p>
+  <h2 class="titre-section" data-anime="lignes">Mises en page, puis calées</h2>
+  <p class="intro" data-anime>Logos, flyers, dépliants, manuels, city-guide et sites : quelques travaux présentés sur le site actuel de Nolanis.</p>
+  <div class="imposition" data-imposition data-effet="imposition">
+    <a class="feuille" href="/print-web#realisation-strassbuch" data-libelle="Print &amp; Web"><span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+      <figure class="media " style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/strassbuch-600.webp" srcset="/assets/images/site/strassbuch-600.webp 600w" sizes="(max-width: 900px) 46vw, 22vw" alt="Couverture illustrée du Strassbuch" width="600" height="600" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <h3>Le Strassbuch</h3><p>City-guide</p></a><a class="feuille" href="/print-web#realisation-herrmann" data-libelle="Print &amp; Web"><span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+      <figure class="media " style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/herrmann-600.webp" srcset="/assets/images/site/herrmann-600.webp 600w" sizes="(max-width: 900px) 46vw, 22vw" alt="Logo Herrmann, maîtres charcutiers traiteurs, sur une carte" width="600" height="600" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <h3>Herrmann</h3><p>Logo</p></a><a class="feuille" href="/print-web#realisation-flyer-covid" data-libelle="Print &amp; Web"><span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+      <figure class="media " style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/flyer-covid-600.webp" srcset="/assets/images/site/flyer-covid-600.webp 600w" sizes="(max-width: 900px) 46vw, 22vw" alt="Flyer vert et blanc consacré au Covid" width="600" height="600" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <h3>Flyer Covid</h3><p>Flyer</p></a><a class="feuille" href="/print-web#realisation-manuel-droits" data-libelle="Print &amp; Web"><span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+      <figure class="media " style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/manuel-droits-600.webp" srcset="/assets/images/site/manuel-droits-600.webp 600w" sizes="(max-width: 900px) 46vw, 22vw" alt="Manuel ouvert aux pages violettes et blanches" width="600" height="600" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <h3>Manuel des droits de l&#39;Homme</h3><p>Manuel · Congrès du Conseil de l&#39;Europe</p></a><a class="feuille" href="/print-web#realisation-inclusive-school" data-libelle="Print &amp; Web"><span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+      <figure class="media " style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/inclusive-school-600.webp" srcset="/assets/images/site/inclusive-school-600.webp 600w" sizes="(max-width: 900px) 46vw, 22vw" alt="Dépliant vert Inclusive School ouvert" width="600" height="600" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <h3>Inclusive School</h3><p>Dépliant · Conseil de l&#39;Europe</p></a><a class="feuille" href="/print-web#realisation-argru" data-libelle="Print &amp; Web"><span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+      <figure class="media " style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/argru-600.webp" srcset="/assets/images/site/argru-600.webp 600w" sizes="(max-width: 900px) 46vw, 22vw" alt="Site de la boulangerie Argru sur tablette et téléphone" width="600" height="600" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <h3>Boulangerie Argru</h3><p>Web</p></a><a class="feuille" href="/print-web#realisation-damien-de-jong" data-libelle="Print &amp; Web"><span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+      <figure class="media " style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/damien-de-jong-600.webp" srcset="/assets/images/site/damien-de-jong-600.webp 600w" sizes="(max-width: 900px) 46vw, 22vw" alt="Flyers verts posés sur une table en bois" width="600" height="600" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <h3>Damien De Jong</h3><p>Flyers</p></a><a class="feuille" href="/print-web#realisation-stras-paysage" data-libelle="Print &amp; Web"><span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+      <figure class="media " style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/stras-paysage-600.webp" srcset="/assets/images/site/stras-paysage-600.webp 600w" sizes="(max-width: 900px) 46vw, 22vw" alt="Site de Stras&#39;Paysage affiché sur un écran d&#39;ordinateur" width="600" height="600" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <h3>Stras&#39;Paysage</h3><p>Web</p></a>
+  </div>
+  <p class="realisations-pied"><a href="/print-web#sechoir" class="lien-fleche" data-libelle="Print &amp; Web">Toutes les réalisations print et web</a></p>
+</section>
+<section class="section section--papier2" id="publipostage" data-fil="gauche">
+  <div class="conteneur etapes">
+    <div>
+      <p class="surtitre enc-j" data-fil-repere>Publipostage et e-mailing</p>
+      <h2 class="titre-section" data-anime="lignes">Un envoi, en cinq étapes</h2>
+      <p class="intro" data-anime>Nolanis planifie et supervise vos mailings postaux et vos e-mailings, du budget jusqu&#39;à l&#39;envoi.</p>
+      <div class="etapes-media enveloppe-scene" data-visuel aria-hidden="true">
+        <svg class="enveloppe" viewBox="0 0 160 110" data-effet="enveloppe"><rect class="env-corps" x="4" y="14" width="152" height="92" rx="3"/><path class="env-rabat" d="M4 17 L80 66 L156 17"/><path class="env-trait" d="M18 84 H70 M18 92 H54"/><rect class="env-timbre" x="122" y="26" width="24" height="28"/></svg>
+        <p class="enveloppe-jour mono" data-jour>J+1 · J+4 · J+7</p>
+      </div>
+    </div>
+    <div>
+      <div class="etapes-cadre">
+        <svg class="etapes-chemin" viewBox="0 0 4 100" preserveAspectRatio="none" aria-hidden="true" data-fx="trace"><path d="M2 0 V100" stroke="currentColor" stroke-width="4" fill="none" vector-effect="non-scaling-stroke"/></svg>
+        <ol class="etapes-liste" data-etapes>
+        <li class="etape" data-etape><span class="etape-num" aria-hidden="true">1</span><h3>Le budget</h3><p>On fixe ensemble le budget de l&#39;envoi.</p></li><li class="etape" data-etape><span class="etape-num" aria-hidden="true">2</span><h3>Le support</h3><p>Choix du format, du grammage et de la finition.</p></li><li class="etape" data-etape><span class="etape-num" aria-hidden="true">3</span><h3>La conception</h3><p>Brochures, dépliants, flyers ou lettres.</p></li><li class="etape" data-etape><span class="etape-num" aria-hidden="true">4</span><h3>La mise sous pli</h3><p>Insertion des documents, conditionnement, mise sous enveloppe.</p></li><li class="etape" data-etape><span class="etape-num" aria-hidden="true">5</span><h3>L&#39;envoi</h3><p>Distribution en J+1, J+4 ou J+7.</p></li>
+        </ol>
+      </div>
+      <p class="etapes-action"><a href="/contact?service=publipostage#devis" class="bouton" data-libelle="Contact">Demander un devis</a></p>
+    </div>
+  </div>
+</section>
+<section class="section conteneur chiffres-pub" id="espaces" data-fil="gauche">
+  <div>
+    <p class="surtitre enc-m" data-fil-repere>Espaces publicitaires</p>
+    <h2 class="titre-section" data-anime="lignes">Deux supports, quatre chiffres</h2>
+    <ul class="chiffres-liste" data-anime="cascade">
+      <li><strong class="chiffre" data-compteur="15000">15 000</strong><span class="chiffre-legende">exemplaires du Strassbuch</span></li>
+      <li><strong class="chiffre" data-compteur="40">40</strong><span class="chiffre-legende">ans et plus d&#39;existence pour le Strassbuch</span></li>
+      <li><strong class="chiffre" data-compteur="5000">5 000</strong><span class="chiffre-legende">abonnés Instagram et Facebook, et plus</span></li>
+      <li><strong class="chiffre" data-compteur="5000">5 000</strong><span class="chiffre-legende">exemplaires du livret de l&#39;Amicale du Conseil de l&#39;Europe</span></li>
+    </ul>
+    <a href="/publicite#chemin-de-fer" class="bouton" data-libelle="Publicité">Réserver un espace</a>
+  </div>
+  <figure class="media chiffres-media" data-grok data-fx="onde" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/publicite-livret-784.webp" srcset="/assets/images/grok/publicite-livret-480.webp 480w, /assets/images/grok/publicite-livret-784.webp 784w" sizes="(max-width: 760px) 100vw, 40vw" alt="Livret ouvert sur un rebord de fenêtre en septembre" width="784" height="1045" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+</section>
+<section class="section section--papier2" id="photos" data-fil="gauche">
+  <div class="conteneur photos-tete">
+    <div>
+      <p class="surtitre enc-n" data-fil-repere>Photographie et vidéo</p>
+      <h2 class="titre-section" data-anime="lignes">Des visuels fidèles à votre image</h2>
+    </div>
+    <a href="/photo-video#planche" class="lien-fleche" data-libelle="Photo &amp; vidéo">Voir la planche contact</a>
+  </div>
+  <div class="ruban-photos bande-film" data-ruban>
+    <div class="ruban-piste" id="ruban-photos" data-boucle-css data-effet="ruban"><img src="/assets/images/photos/p01-320.webp" alt="Cathédrale de Strasbourg et église orthodoxe au coucher du soleil" width="320" height="320" loading="lazy" decoding="async"><img src="/assets/images/photos/p04-320.webp" alt="Assiette dressée sur une table éclairée à la bougie" width="320" height="320" loading="lazy" decoding="async"><img src="/assets/images/photos/p07-320.webp" alt="Tranches de viande rosée et légumes" width="320" height="320" loading="lazy" decoding="async"><img src="/assets/images/photos/p10-320.webp" alt="Salon contemporain aux touches rouges" width="320" height="320" loading="lazy" decoding="async"><img src="/assets/images/photos/p13-320.webp" alt="Plat dressé en hauteur" width="320" height="320" loading="lazy" decoding="async"><img src="/assets/images/photos/p16-320.webp" alt="Chambre d&#39;hôtel lumineuse" width="320" height="320" loading="lazy" decoding="async"><img src="/assets/images/photos/p19-320.webp" alt="Meuble télévision laqué blanc" width="320" height="320" loading="lazy" decoding="async"><img src="/assets/images/photos/p22-320.webp" alt="Dessert aux fruits frais" width="320" height="320" loading="lazy" decoding="async"><img src="/assets/images/photos/p25-320.webp" alt="Tubes et emballages blancs en série" width="320" height="320" loading="lazy" decoding="async"><img src="/assets/images/photos/p28-320.webp" alt="Façade d&#39;un hôtel" width="320" height="320" loading="lazy" decoding="async"><img src="/assets/images/photos/p31-320.webp" alt="Portrait de femme sur fond sombre" width="320" height="320" loading="lazy" decoding="async"><img src="/assets/images/photos/p34-320.webp" alt="Plateau de fruits de mer" width="320" height="320" loading="lazy" decoding="async"><img src="/assets/images/photos/p37-320.webp" alt="Salle de réception aux chaises rouges" width="320" height="320" loading="lazy" decoding="async"><img src="/assets/images/photos/p41-320.webp" alt="Portrait en studio, robe verte" width="320" height="320" loading="lazy" decoding="async"><img src="/assets/images/photos/p44-320.webp" alt="Arrosage d&#39;un champ et arc-en-ciel" width="320" height="320" loading="lazy" decoding="async"><img src="/assets/images/photos/p47-320.webp" alt="Poissons et crustacés frais" width="320" height="320" loading="lazy" decoding="async"><img src="/assets/images/photos/p50-320.webp" alt="Salle de restaurant traditionnelle" width="320" height="320" loading="lazy" decoding="async"><img src="/assets/images/photos/p53-320.webp" alt="Concession automobile" width="320" height="320" loading="lazy" decoding="async"><img src="/assets/images/photos/p01-320.webp" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/images/photos/p04-320.webp" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/images/photos/p07-320.webp" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/images/photos/p10-320.webp" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/images/photos/p13-320.webp" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/images/photos/p16-320.webp" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/images/photos/p19-320.webp" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/images/photos/p22-320.webp" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/images/photos/p25-320.webp" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/images/photos/p28-320.webp" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/images/photos/p31-320.webp" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/images/photos/p34-320.webp" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/images/photos/p37-320.webp" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/images/photos/p41-320.webp" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/images/photos/p44-320.webp" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/images/photos/p47-320.webp" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/images/photos/p50-320.webp" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/images/photos/p53-320.webp" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true"></div>
+  </div>
+  <div class="photos-commandes conteneur"><button type="button" class="bouton-pause" data-pause-pour="ruban-photos" data-libelle-pause="Pause" data-libelle-lecture="Lecture"><span data-libelle-bouton>Pause</span></button></div>
+</section>
+<section class="section section--papier2" id="contact" data-fil="gauche">
+  <div class="conteneur fin">
+    <div>
+      <p class="surtitre enc-t" data-fil-repere>Un projet ?</p>
+      <h2 class="titre-section" data-anime="lignes">Parlons-en, place de l&#39;Homme de Fer</h2>
+      <p data-anime>Décrivez votre projet en trois étapes : Nolanis vous recontacte pour le devis.</p>
+      <a class="fin-tel" href="tel:+33680114203">06 80 11 42 03</a>
+      <p>1, place de l&#39;Homme de Fer, 67000 Strasbourg<br><span class="a-completer">Horaires : à compléter</span></p>
+      <p class="fin-actions">
+        <a href="/contact#devis" class="bouton" data-libelle="Contact" data-survol="magnetique">Demander un devis</a>
+        <a href="/contact#acces" class="bouton bouton--contour" data-libelle="Contact">Plan d&#39;accès</a>
+      </p>
+    </div>
+    <div class="plan" data-visuel data-fx="trace" role="img" aria-label="Plan d&#39;accès dessiné : la place de l&#39;Homme de Fer et sa station de tram">
+  <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path class="rue" d="M-10 70 L410 120"/><path class="rue" d="M60 -10 L170 310"/><path class="rue" d="M300 -10 L250 310"/><path class="rue" d="M-10 230 L410 205"/>
+    <path class="rue-trait" data-fx-trait d="M-10 70 L410 120 M60 -10 L170 310 M300 -10 L250 310 M-10 230 L410 205"/>
+    <path class="tram" data-fx-trait d="M-10 160 C 90 150, 150 145, 205 150 S 330 165, 410 150"/>
+    <path class="tram" data-fx-trait d="M205 -10 C 200 60, 205 110, 205 150 S 210 250, 215 310" opacity=".55"/>
+    <circle class="place" cx="205" cy="150" r="38"/>
+    <circle class="ici" cx="232" cy="128" r="7"/>
+    <text x="246" y="124">Nolanis</text>
+    <text x="150" y="212">Homme de Fer</text>
+  </svg>
+  <p class="plan-legende">Station de tram Homme de Fer</p>
+</div>
+  </div>
+</section>
+<template data-fil-objet><g class="fil-tete"><circle r="9" class="fil-tete-anneau"/><path d="M-13 0 H13 M0 -13 V13" class="fil-tete-croix"/></g></template>
+</main>
+<footer class="pied" id="pied" data-masque-barre>
+  <div class="conteneur pied-grille">
+    <div>
+      <p><img class="logo-nolanis" src="/assets/images/logo-nolanis-480.webp" alt="" width="140" height="48"></p>
+      <p>1, place de l&#39;Homme de Fer, 67000 Strasbourg<br><a href="tel:+33680114203">06 80 11 42 03</a><br><span class="courriel">contact@optemis.com</span><br>Horaires : à compléter</p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p class="pied-titre">Sommaire</p>
+      <ul><li><a href="/" data-libelle="Accueil" aria-current="page">Accueil</a></li><li><a href="/print-web" data-libelle="Print &amp; Web">Print &amp; Web</a></li><li><a href="/publicite" data-libelle="Publicité">Publicité</a></li><li><a href="/photo-video" data-libelle="Photo &amp; vidéo">Photo &amp; vidéo</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div>
+      <p class="pied-titre">Confort de lecture</p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="conteneur pied-bas"><span class="barre-controle barre-controle--pied" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span><p>Mentions légales · Politique de confidentialité : à compléter</p><p>Maquette : les informations marquées « à compléter » seront fournies par Nolanis.</p><p>© Nolanis</p></div>
+</footer>
+<div data-barre-fixe>
+  <a class="bouton bouton--contour" href="tel:+33680114203">Appeler</a>
+  <a class="bouton" href="/contact#devis" data-libelle="Contact">Devis</a>
+</div>
+</body>
+</html>

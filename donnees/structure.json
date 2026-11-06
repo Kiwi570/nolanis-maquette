@@ -1,0 +1,12 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Nolanis",
+  "url": "https://nolanis-maquette.vercel.app/",
+  "logo": "https://nolanis-maquette.vercel.app/assets/images/logo-nolanis.png",
+  "telephone": "+33680114203",
+  "email": "contact@optemis.com",
+  "address": { "@type": "PostalAddress", "streetAddress": "1, place de l'Homme de Fer", "postalCode": "67000", "addressLocality": "Strasbourg", "addressCountry": "FR" },
+  "areaServed": "Strasbourg, Bas-Rhin",
+  "description": "Agence de communication visuelle à Strasbourg : print et web, publicité, publipostage et e-mailing, photographie et vidéo, objets publicitaires, sauvegarde en ligne, formations."
+}

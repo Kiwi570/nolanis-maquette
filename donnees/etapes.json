@@ -1,0 +1,7 @@
+[
+  { "n": "1", "nom": "Le budget", "texte": "On fixe ensemble le budget de l'envoi." },
+  { "n": "2", "nom": "Le support", "texte": "Choix du format, du grammage et de la finition." },
+  { "n": "3", "nom": "La conception", "texte": "Brochures, dépliants, flyers ou lettres." },
+  { "n": "4", "nom": "La mise sous pli", "texte": "Insertion des documents, conditionnement, mise sous enveloppe." },
+  { "n": "5", "nom": "L'envoi", "texte": "Distribution en J+1, J+4 ou J+7." }
+]

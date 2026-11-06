@@ -1,0 +1,8 @@
+[
+  { "cle": "strassbuch-guide", "titre": "Le Strassbuch imprimé", "editeur": "Le Strassbuch", "texte": "Le city-guide des bons plans et de l'art de vivre à Strasbourg, tiré à 15 000 exemplaires.", "chiffre": "15 000 ex." },
+  { "cle": "strassbuch-reseaux", "titre": "Instagram et Facebook", "editeur": "Le Strassbuch", "texte": "Les comptes du Strassbuch, suivis par plus de 5 000 abonnés.", "chiffre": "5 000 abonnés et plus" },
+  { "cle": "strassbuch-site", "titre": "Une page sur le site", "editeur": "Le Strassbuch", "texte": "Une page dédiée à votre annonce sur le site du Strassbuch.", "chiffre": "lestrassbuch.fr" },
+  { "cle": "amicale-livret", "titre": "Le livret annuel", "editeur": "Amicale du Conseil de l'Europe", "texte": "Distribué chaque année en septembre, tiré à 5 000 exemplaires.", "chiffre": "5 000 ex." },
+  { "cle": "amicale-site", "titre": "Le site de l'Amicale", "editeur": "Amicale du Conseil de l'Europe", "texte": "Une page partenaire sur le site de l'Amicale, que vous modifiez vous-même.", "chiffre": "amicale-coe.eu" },
+  { "cle": "amicale-newsletter", "titre": "La newsletter", "editeur": "Amicale du Conseil de l'Europe", "texte": "La lettre adressée aux agents du Conseil de l'Europe.", "chiffre": "Agents du Conseil de l'Europe" }
+]

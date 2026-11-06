@@ -1,0 +1,10 @@
+[
+  { "id": "strassbuch", "nom": "Le Strassbuch", "type": "City-guide", "famille": "print", "image": "site/strassbuch", "alt": "Couverture illustrée du Strassbuch" },
+  { "id": "herrmann", "nom": "Herrmann", "type": "Logo", "famille": "print", "image": "site/herrmann", "alt": "Logo Herrmann, maîtres charcutiers traiteurs, sur une carte" },
+  { "id": "flyer-covid", "nom": "Flyer Covid", "type": "Flyer", "famille": "print", "image": "site/flyer-covid", "alt": "Flyer vert et blanc consacré au Covid" },
+  { "id": "manuel-droits", "nom": "Manuel des droits de l'Homme", "type": "Manuel · Congrès du Conseil de l'Europe", "famille": "print", "image": "site/manuel-droits", "alt": "Manuel ouvert aux pages violettes et blanches" },
+  { "id": "inclusive-school", "nom": "Inclusive School", "type": "Dépliant · Conseil de l'Europe", "famille": "print", "image": "site/inclusive-school", "alt": "Dépliant vert Inclusive School ouvert" },
+  { "id": "argru", "nom": "Boulangerie Argru", "type": "Web", "famille": "web", "image": "site/argru", "alt": "Site de la boulangerie Argru sur tablette et téléphone" },
+  { "id": "damien-de-jong", "nom": "Damien De Jong", "type": "Flyers", "famille": "print", "image": "site/damien-de-jong", "alt": "Flyers verts posés sur une table en bois" },
+  { "id": "stras-paysage", "nom": "Stras'Paysage", "type": "Web", "famille": "web", "image": "site/stras-paysage", "alt": "Site de Stras'Paysage affiché sur un écran d'ordinateur" }
+]

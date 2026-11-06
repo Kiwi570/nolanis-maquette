@@ -1,0 +1,43 @@
+… fichiers
+  fait en 0 s
+… grille
+  fait en 3 s
+… mesures
+  18/66
+  39/66
+  59/66
+  fait en 103 s
+… mesures:balayage
+  fait en 31 s
+… films
+  fait en 138 s
+… bords
+  fait en 67 s
+… parcours:intro
+  fait en 64 s
+… parcours:menu
+  fait en 5 s
+… parcours:liens
+  fait en 150 s
+… parcours:hauteur
+  fait en 46 s
+… parcours:calme
+  fait en 49 s
+… parcours:projet
+  fait en 10 s
+… ecran
+  fait en 53 s
+… fluidite
+  fait en 190 s
+… mouvement
+  fait en 163 s
+… vitesse
+  fait en 20 s
+… captures
+  fait en 138 s
+… safari
+  fait en 0 s
+
+Échecs : 7 · À regarder : 8 · Non lancé : 1
+Relancer seulement ce qui a échoué : node _audit/audit.mjs --pages=/,/contact,/photo-video,/publicite --seulement=fichiers,mesures
+Rapport : /home/claude/nolanis-maquette/_audit/rapport/rapport.md

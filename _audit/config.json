@@ -1,0 +1,38 @@
+{
+  "siteActuel": "optemis.com",
+  "pagesTypes": [
+    "/",
+    "/print-web",
+    "/publicite",
+    "/photo-video",
+    "/contact"
+  ],
+  "effets": [
+    "calage",
+    "repere",
+    "quadri",
+    "quadri-defilement",
+    "encre",
+    "liasse",
+    "imposition",
+    "enveloppe",
+    "ruban",
+    "depliant-couverture",
+    "depliant",
+    "reimposition",
+    "sechoir",
+    "couverture",
+    "chemin-de-fer",
+    "bande",
+    "compte-fils",
+    "crayon-gras",
+    "timecode",
+    "tampon",
+    "bat",
+    "fin-loupe",
+    "bon-tampon"
+  ],
+  "grille": {
+    "dispenses": {}
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "volets": [
+    { "titre": "La correspondance", "encre": "c", "liste": ["Cartes de visite", "Papier à en-tête", "Têtes de lettres", "Cartes de correspondance"] },
+    { "titre": "La promotion", "encre": "m", "liste": ["Prospectus et dépliants", "Encarts publicitaires", "Cartes d'invitation"] },
+    { "titre": "L'édition", "encre": "j", "liste": ["Catalogues et brochures", "Blocs-notes", "Pochettes à rabats"] }
+  ],
+  "web": [
+    { "nom": "Sites vitrines", "forme": "vitrine" },
+    { "nom": "Sites de vente en ligne", "forme": "boutique" },
+    { "nom": "Catalogues interactifs", "forme": "catalogue" },
+    { "nom": "Bannières publicitaires", "forme": "banniere" },
+    { "nom": "Campagnes e-mailing", "forme": "mail" },
+    { "nom": "Blogs et CMS", "forme": "blog" }
+  ]
+}
