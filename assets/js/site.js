@@ -2,10 +2,10 @@
    les boucles, les mesures et la bibliothèque d'effets (data-anime, data-fx, data-survol) ; ici, seulement
    ce qui est propre à Nolanis. Intro (moins de 3 s) : traits de coupe, logo imprimé en trois passages,
    repère de calage qui glisse jusqu'à l'objet d'ouverture de la page (versObjet), puis la page s'ouvre sur lui. */
-import { demarrer, etat, versObjet } from './socle/index.js?v=2';
-import { initCalage, calage, quadriAuDefilement, imprimer, encre, fil, liasse, imposition, etapes, sechoir, enveloppe, titresQuadri } from './effets-nolanis.js?v=2';
-import { depliant, cheminDeFer, compteFils, planche, montage, devis, mouvementsPages } from './pages-nolanis.js?v=2';
-import { poste, delai, essai, presentoir, trajet, panne, molette, mouvementsV2, ouvrirV2, etatFinalV2 } from './pages-v2.js?v=2';
+import { demarrer, etat, versObjet } from './socle/index.js?v=3';
+import { initCalage, calage, quadriAuDefilement, imprimer, encre, fil, liasse, imposition, etapes, sechoir, enveloppe, titresQuadri } from './effets-nolanis.js?v=3';
+import { depliant, cheminDeFer, compteFils, planche, montage, devis, mouvementsPages } from './pages-nolanis.js?v=3';
+import { poste, delai, essai, presentoir, trajet, panne, molette, mouvementsV2, ouvrirV2, etatFinalV2 } from './pages-v2.js?v=3';
 
 const gsap = window.gsap;
 const $ = (s) => document.querySelector(s);
@@ -38,6 +38,10 @@ function ouvrirPage(tl, t0) {
   ouvrirV2(tl, t0, page);
   if (page === '404' && $('.op-404 h1')) tl.fromTo('.op-404 h1', { '--rot': '180deg' }, { '--rot': '0deg', duration: .9, ease: 'back.out(1.4)' }, t0 + .1);
 }
+
+/* Le lien Menu sans JavaScript (menu ouvert par #menu) laisse la place au vrai bouton. */
+document.querySelector('.menu-sansjs')?.remove();
+document.querySelector('.menu-sansjs-fermer')?.remove();
 
 demarrer({
   preparer() {

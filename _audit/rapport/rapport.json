@@ -3,22 +3,27 @@
   "aRegarder": [],
   "nonLances": [],
   "oks": {
+    "vercel.json": 1,
+    ".vercelignore": 1,
+    "robots.txt": 1,
+    "numéro de version": 1,
+    "langues": 1,
+    "mesures": 312,
+    "balayage": 6,
     "intro accélérable et passable": 7,
     "menu": 1,
-    "clavier": 4,
-    "liens et boutons": 4,
+    "clavier": 6,
+    "liens et boutons": 6,
     "liens profonds": 16,
-    "liens vers la page en cours": 4,
-    "changements de hauteur": 4,
-    "mode calme": 8,
+    "liens vers la page en cours": 6,
+    "changements de hauteur": 6,
+    "mode calme": 12,
     "bouton du mode calme": 2,
-    "parcours du projet": 1,
-    "mouvement": 8,
-    "effets du plan": 37,
-    "souris immobile": 4
+    "parcours du projet": 1
   },
   "infos": [
-    "Audit standard : étapes lourdes sur /formations, /objets-publicitaires, /publipostage, /sauvegarde.",
+    "Numéro de version des fichiers : ?v=3",
+    "Journal v3 : 1 étape(s) notée(s), 5 min de travail pour 20 min de budget, 1 min d’attente de l’utilisateur.",
     "Accessibilité : axe-core 4.12.1 en plus des contrôles intégrés."
   ],
   "grille": []

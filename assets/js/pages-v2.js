@@ -2,8 +2,8 @@
    Objets publicitaires (impression en direct, envol vers le bouton Devis, présentoir à feuilleter),
    Sauvegarde (cadenas, barre incrémentale, trajet d'un fichier, test de panne),
    Formations (mise au point du viseur, molette de mode crantée). */
-import { etat, rafraichir } from './socle/index.js?v=2';
-import { etroit, scrubVar } from './effets-nolanis.js?v=2';
+import { etat, rafraichir } from './socle/index.js?v=3';
+import { etroit, scrubVar } from './effets-nolanis.js?v=3';
 
 const gsap = window.gsap;
 const ST = window.ScrollTrigger;

@@ -1,0 +1,60 @@
+… fichiers
+  fait en 0 s
+… grille
+  fait en 5 s
+… mesures
+  14/520
+  38/520
+  63/520
+  98/520
+  123/520
+  159/520
+  183/520
+  213/520
+  238/520
+  266/520
+  287/520
+  316/520
+  336/520
+  367/520
+  389/520
+  420/520
+  443/520
+  473/520
+  498/520
+  fait en 594 s
+… mesures:balayage
+  fait en 84 s
+… films
+  fait en 241 s
+… bords
+  fait en 110 s
+… parcours:intro
+  fait en 108 s
+… parcours:menu
+  fait en 5 s
+… parcours:liens
+  fait en 186 s
+… parcours:hauteur
+  fait en 85 s
+… parcours:calme
+  fait en 81 s
+… parcours:projet
+  fait en 10 s
+… ecran
+  fait en 245 s
+… fluidite
+  fait en 318 s
+… mouvement
+  fait en 265 s
+… vitesse
+  fait en 34 s
+… captures
+  fait en 240 s
+… safari
+  fait en 0 s
+
+Échecs : 45 · À regarder : 9 · Non lancé : 1
+Relancer seulement ce qui a échoué : node _audit/audit.mjs --complet --seulement=fichiers,mesures,parcours,ecran
+Rapport : /home/claude/nolanis-maquette/_audit/rapport/rapport.md
+CODE 1

@@ -2,6 +2,23 @@
 
 Chaque version ajoute sa partie en tête de ce fichier, construite en comparant l'archive précédente et la nouvelle, jamais de mémoire.
 
+## v3 — un vrai en-tête sur ordinateur
+
+Comparaison faite entre nolanis-maquette-v2.zip et ce dossier : seuls l'en-tête, la feuille de style, `site.js` et deux textes changent (plus le numéro de version des fichiers).
+
+**En-tête (toutes les pages)** :
+- sur ordinateur, dès 900 px de large, l'en-tête tient sur deux rangées : en haut le logo, une barre de contrôle des encres avec « Communication visuelle · Strasbourg » (le texte se retire sous 1100 px), le téléphone et « Demander un devis » ;
+- en dessous, la navigation en chemin de fer : les 8 pages dans des cases numérotées de 01 à 08, traits de coupe aux deux bouts ; au survol, un filet d'encre (cyan, magenta, jaune, vert-jaune) se déroule en haut de la case ; la page en cours est encrée en noir ;
+- le bouton Menu ne s'affiche plus qu'en dessous de 900 px (tablette, téléphone) ;
+- sans JavaScript, sous 900 px, un lien Menu ouvre le même menu plein écran, avec un lien Fermer.
+
+**Petits écrans et confort** :
+- téléphone à l'horizontale : ouvertures resserrées (accueil, objets, sauvegarde, contact, 404) pour garder le bouton principal dans le premier écran ;
+- mode calme et sans JavaScript : les scènes (dépliant, chemin de fer, parcours de l'enveloppe, trajet du fichier) prennent la hauteur de leur contenu, et le dos du dépliant ne se superpose plus au texte ;
+- un lien vers une scène plein écran (par exemple /publicite#chemin-de-fer) l'amène en haut de l'écran ;
+- présentoir des objets sur écran bas : l'introduction se retire pour que tout tienne.
+- sur petit écran, la mention « Illustration générée » des ouvertures de l'accueil et de la sauvegarde passe en haut à droite, pour ne plus couvrir de texte.
+
 ## v2 — les quatre pages manquantes
 
 Comparaison faite entre nolanis-maquette-v1.zip et ce dossier.

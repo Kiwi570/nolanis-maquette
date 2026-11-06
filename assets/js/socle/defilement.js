@@ -1,8 +1,8 @@
 /* Défilement : natif sur Mac, iPhone, iPad et tout écran tactile (déjà fluide).
    Adouci seulement à la molette de souris sous Windows et Linux, jamais en mode calme.
    Le défilement natif reste la référence : on ne fait qu'animer window.scrollTo. */
-import { html, etat } from './etat.js?v=2';
-import { mesures } from './mesures.js?v=2';
+import { html, etat } from './etat.js?v=3';
+import { mesures } from './mesures.js?v=3';
 
 let adouci = false;
 let cible = 0, courant = 0, anime = false, dernier = 0;
@@ -96,10 +96,10 @@ export function debloquerDefilement(raison) {
   if (!verrous.size) html.classList.remove('defilement-bloque');
 }
 
-/* Aller à un élément (ou une position), sous l'en-tête. */
+/* Aller à un élément (ou une position), sous l'en-tête ; tout en haut pour une scène qui cache l'en-tête (data-entete-cache). */
 export function aller(cibleEl, { instant = false } = {}) {
   let y = typeof cibleEl === 'number' ? cibleEl
-    : cibleEl.getBoundingClientRect().top + window.scrollY - mesures.enteteH - 12;
+    : cibleEl.getBoundingClientRect().top + window.scrollY - (cibleEl.closest('[data-entete-cache]') ? 0 : mesures.enteteH + 12);
   y = Math.min(maxDefilement(), Math.max(0, y));
   if (instant || etat.calme) { anime = false; window.scrollTo({ top: y, behavior: 'instant' }); return; }
   if (adouci) { if (!anime) courant = window.scrollY; cible = y; lancer(); return; }

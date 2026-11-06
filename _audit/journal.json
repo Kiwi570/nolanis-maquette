@@ -187,6 +187,59 @@
       "effetsRetires": [],
       "grilleDispenses": {},
       "notes": "Audit standard v2 : 28 échecs au premier passage (dont 20 de navigation sans JavaScript dus aux 9 liens), 0 après corrections (relances ciblées fichiers, mesures, films sur toutes les pages, puis mouvement et parcours sur les 4 nouvelles pages). Images Grok v2 reçues à 17:11, construction des pages commencée pendant l'attente."
+    },
+    {
+      "version": 3,
+      "skill": "v10.3",
+      "perimetre": [
+        "en-tête (toutes les pages)"
+      ],
+      "etapes": [
+        {
+          "etape": "construction : en-tête sur deux rangées",
+          "budget": 20,
+          "debut": "2026-11-06T18:26:00+01:00",
+          "fin": "2026-11-06T18:31:00+01:00"
+        },
+        {
+          "etape": "audit complet et corrections",
+          "budget": 50,
+          "debut": "2026-11-06T18:31:00+01:00",
+          "fin": "2026-11-06T19:56:00+01:00"
+        },
+        {
+          "etape": "livraison",
+          "budget": 5,
+          "debut": "2026-11-06T19:56:00+01:00",
+          "fin": ""
+        }
+      ],
+      "attentes": [
+        {
+          "pour": "choix de la suite (finaliser)",
+          "debut": "2026-11-06T18:23:00+01:00",
+          "fin": "2026-11-06T18:24:00+01:00"
+        }
+      ],
+      "allersRetours": 1,
+      "modules": [],
+      "audit": {
+        "niveau": "complet",
+        "echecsPremierPassage": 45,
+        "relances": 2,
+        "corrections": [
+          "lien Menu sans JavaScript (menu ouvert par #menu)",
+          "ouvertures resserrées sur téléphone à l'horizontale",
+          "scènes à hauteur de contenu en mode calme et sans JavaScript",
+          "dos du dépliant retiré une fois ouvert",
+          "mentions Illustration générée en haut à droite sur petit écran",
+          "aller() du socle : haut exact pour une scène qui cache l'en-tête",
+          "introduction du présentoir retirée sur écran bas"
+        ]
+      },
+      "effetsRetires": [],
+      "grilleDispenses": {},
+      "notes": "Demande du client à 18:25 : un vrai en-tête sur ordinateur (à 1000 px, le bouton Menu remplaçait les liens). Premier audit complet de la v2 arrêté pour le refaire sur la v3."
     }
   ]
 }

@@ -1,4 +1,4 @@
-# Nolanis — maquette « Bon à tirer » (v2)
+# Nolanis — maquette « Bon à tirer » (v3)
 
 Maquette du futur site de Nolanis, agence de communication visuelle à Strasbourg.
 Adresse de démonstration : https://nolanis-maquette.vercel.app

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" data-v="2" data-curseur>
+<html lang="fr" data-v="3" data-curseur>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -41,14 +41,14 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
 })();</script>
 <link rel="preload" href="/assets/polices/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/polices/instrument-sans-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/socle.css?v=2">
-<link rel="stylesheet" href="/assets/css/site.css?v=2">
-<link rel="modulepreload" href="/assets/js/site.js?v=2">
-<link rel="modulepreload" href="/assets/js/socle/index.js?v=2">
+<link rel="stylesheet" href="/assets/css/socle.css?v=3">
+<link rel="stylesheet" href="/assets/css/site.css?v=3">
+<link rel="modulepreload" href="/assets/js/site.js?v=3">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=3">
 <script src="/assets/vendor/gsap.min.js" defer></script>
 <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="/assets/vendor/SplitText.min.js" defer></script>
-<script type="module" src="/assets/js/site.js?v=2"></script>
+<script type="module" src="/assets/js/site.js?v=3"></script>
 <meta name="theme-color" content="#f2eee6">
 <link rel="icon" href="/assets/images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
@@ -81,17 +81,21 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
 <header data-entete>
   <div class="entete-rangee">
     <a class="entete-logo" href="/" data-libelle="Accueil" aria-label="Nolanis, retour à l&#39;accueil"><img class="logo-nolanis" src="/assets/images/logo-nolanis-480.webp" alt="" width="106" height="36"></a>
-    <nav data-nav aria-label="Navigation principale">
-      <ul><li><a href="/print-web" data-libelle="Print &amp; Web">Print &amp; Web</a></li><li><a href="/publicite" data-libelle="Publicité">Publicité</a></li><li><a href="/publipostage" data-libelle="Publipostage" aria-current="page">Publipostage</a></li><li><a href="/photo-video" data-libelle="Photo &amp; vidéo">Photo &amp; vidéo</a></li><li><a href="/objets-publicitaires" data-libelle="Objets">Objets</a></li><li><a href="/sauvegarde" data-libelle="Sauvegarde">Sauvegarde</a></li><li><a href="/formations" data-libelle="Formations">Formations</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
-    </nav>
+    <p class="entete-signature"><span class="barre-controle barre-controle--entete" aria-hidden="true"><i class="enc-c"></i><i class="enc-m"></i><i class="enc-j"></i><i class="enc-n"></i><i class="enc-t"></i><i class="enc-g1"></i><i class="enc-g2"></i><i class="enc-g3"></i></span><span class="entete-signature-texte">Communication visuelle · Strasbourg</span></p>
     <div class="entete-actions">
+      <a class="entete-tel" href="tel:+33680114203"><span class="entete-tel-libelle">Tél.</span>06 80 11 42 03</a>
       <a class="bouton" href="/contact#devis" data-libelle="Contact"><span class="bouton-long">Demander un devis</span><span class="bouton-court">Devis</span></a>
+      <a class="menu-sansjs" href="#menu" data-menu-bouton>Menu</a>
       <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span data-libelle-bouton>Menu</span></button>
     </div>
   </div>
+  <nav class="entete-chemin" data-nav aria-label="Navigation principale">
+    <ul><li class="enc-c"><a href="/print-web" data-libelle="Print &amp; Web"><span class="folio" aria-hidden="true">01</span><span class="nav-nom">Print &amp; Web</span></a></li><li class="enc-m"><a href="/publicite" data-libelle="Publicité"><span class="folio" aria-hidden="true">02</span><span class="nav-nom">Publicité</span></a></li><li class="enc-j"><a href="/publipostage" data-libelle="Publipostage" aria-current="page"><span class="folio" aria-hidden="true">03</span><span class="nav-nom">Publipostage</span></a></li><li class="enc-t"><a href="/photo-video" data-libelle="Photo &amp; vidéo"><span class="folio" aria-hidden="true">04</span><span class="nav-nom">Photo &amp; vidéo</span></a></li><li class="enc-c"><a href="/objets-publicitaires" data-libelle="Objets"><span class="folio" aria-hidden="true">05</span><span class="nav-nom">Objets</span></a></li><li class="enc-m"><a href="/sauvegarde" data-libelle="Sauvegarde"><span class="folio" aria-hidden="true">06</span><span class="nav-nom">Sauvegarde</span></a></li><li class="enc-j"><a href="/formations" data-libelle="Formations"><span class="folio" aria-hidden="true">07</span><span class="nav-nom">Formations</span></a></li><li class="enc-t"><a href="/contact" data-libelle="Contact"><span class="folio" aria-hidden="true">08</span><span class="nav-nom">Contact</span></a></li></ul>
+  </nav>
 </header>
 <div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
   <span class="coupe coupe--hg" aria-hidden="true"></span><span class="coupe coupe--hd" aria-hidden="true"></span><span class="coupe coupe--bg" aria-hidden="true"></span><span class="coupe coupe--bd" aria-hidden="true"></span>
+  <p class="menu-sansjs-fermer"><a href="#menu-ferme">Fermer</a></p>
   <ul><li style="--i:0"><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><a href="/print-web" class="menu-lien" data-libelle="Print &amp; Web">Print &amp; Web</a></li><li style="--i:2"><a href="/publicite" class="menu-lien" data-libelle="Publicité">Publicité</a></li><li style="--i:3"><a href="/publipostage" class="menu-lien" data-libelle="Publipostage" aria-current="page">Publipostage</a></li><li style="--i:4"><a href="/photo-video" class="menu-lien" data-libelle="Photo &amp; vidéo">Photo &amp; vidéo</a></li><li style="--i:5"><a href="/objets-publicitaires" class="menu-lien" data-libelle="Objets">Objets</a></li><li style="--i:6"><a href="/sauvegarde" class="menu-lien" data-libelle="Sauvegarde">Sauvegarde</a></li><li style="--i:7"><a href="/formations" class="menu-lien" data-libelle="Formations">Formations</a></li><li style="--i:8"><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li></ul>
   <p class="menu-actions"><a class="bouton" href="/contact#devis" data-libelle="Contact">Demander un devis</a> <a class="bouton bouton--contour" href="tel:+33680114203">Appeler 06 80 11 42 03</a></p>
   <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>

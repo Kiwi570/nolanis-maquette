@@ -1,0 +1,7 @@
+# Audits de la v3
+
+1. Audit complet de la v2 lancé à 18:24, arrêté à 18:26 : le client a demandé un nouvel en-tête, qui touche toutes les pages.
+2. Audit complet de la v3 (18:31, 13 tailles, toutes les pages) : 45 échecs, 9 à regarder, 1 non lancé (Safari). Causes : téléphone à l'horizontale (844 × 390) où le bouton principal sortait du premier écran (accueil, objets, sauvegarde, contact, 404), en-tête sans JavaScript trop haut sur téléphone (liens sur deux ou trois rangées), scènes épinglées trop hautes en mode calme et sans JavaScript (dépliant, chemin de fer, parcours de l'enveloppe), dos du dépliant compté sur le texte, lien profond vers le chemin de fer à 128 px du haut, barre de progression du présentoir coupée de 1 px en 1000 × 560.
+3. Corrections : lien Menu sans JavaScript (menu du socle ouvert par #menu), ouvertures resserrées à l'horizontale, scènes à hauteur de contenu en mode calme et sans JavaScript, dos du dépliant retiré quand le dépliant est ouvert, introduction du présentoir retirée sur écran bas.
+4. Audit complet ciblé (fichiers, mesures, parcours, écran, toutes les pages) : 3 échecs (deux mentions « Illustration générée » sur un texte, lien profond), corrigés : mentions en haut à droite sur petit écran, aller() du socle vise le haut exact d'une scène qui cache l'en-tête.
+5. Audit complet ciblé final (fichiers, mesures, parcours, sur les 6 pages concernées) : 0 échec, 0 à regarder. Voir rapport/rapport.md.

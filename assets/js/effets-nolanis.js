@@ -3,7 +3,7 @@
    objet-a-faire-tourner (repère), fil-conducteur (trait de coupe), planches-empilees (liasse), axes-au-defilement (encre).
    Règles : aucune mesure de mise en page pendant le défilement (tout est mesuré au refresh), boucles du socle
    (arrêtées hors écran, onglet caché et en mode calme), mode calme : état final, rien ne bouge. */
-import { boucle, etat, quand, rafraichir } from './socle/index.js?v=2';
+import { boucle, etat, quand, rafraichir } from './socle/index.js?v=3';
 
 const gsap = window.gsap;
 const ST = window.ScrollTrigger;

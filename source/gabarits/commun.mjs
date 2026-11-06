@@ -57,21 +57,29 @@ ${structure ? html`<script type="application/ld+json">${brut(structure)}</script
 
 const logo = (c, w = 106) => html`<img class="logo-nolanis" src="/assets/images/logo-nolanis-480.webp" alt="" width="${w}" height="${Math.round(w * 400 / 1172)}">`;
 
+/* En-tête sur deux rangées (ordinateur) : logo, signature et barre de contrôle, téléphone et devis ;
+   puis la navigation en chemin de fer : chaque page est une case numérotée, la page en cours est encrée. */
 function entete(c) {
+  const liens = navigation(c).filter((k) => k !== 'accueil');
+  const encres = ['c', 'm', 'j', 't'];
   return html`<header data-entete>
   <div class="entete-rangee">
     <a class="entete-logo" href="${c.url('accueil')}" data-libelle="${c.libelle('accueil')}" aria-label="${c.s('commun.accueilLien')}"${c.page.cle === 'accueil' ? brut(' aria-current="page"') : ''}>${logo(c)}</a>
-    <nav data-nav aria-label="${c.s('commun.navigation')}">
-      <ul>${navigation(c).filter((k) => k !== 'accueil').map((k) => html`<li>${c.lien(k)}</li>`)}</ul>
-    </nav>
+    <p class="entete-signature">${barreControle('barre-controle--entete')}<span class="entete-signature-texte">${c.t('commun.enteteSignature')}</span></p>
     <div class="entete-actions">
+      <a class="entete-tel" href="tel:${c.site.contact.telephoneLien}"><span class="entete-tel-libelle">${c.t('commun.enteteTel')}</span>${c.site.contact.telephone}</a>
       <a class="bouton" href="${c.url(c.site.actionEntete.page, c.site.actionEntete.ancre || '')}" data-libelle="${c.libelle(c.site.actionEntete.page)}"><span class="bouton-long">${c.t('commun.actionEntete')}</span><span class="bouton-court">${c.t('commun.actionCourte')}</span></a>
+      <a class="menu-sansjs" href="#menu" data-menu-bouton>${c.t('commun.menu')}</a>
       <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="${c.s('commun.menu')}" data-libelle-fermer="${c.s('commun.fermer')}"><span data-libelle-bouton>${c.t('commun.menu')}</span></button>
     </div>
   </div>
+  <nav class="entete-chemin" data-nav aria-label="${c.s('commun.navigation')}">
+    <ul>${liens.map((k, i) => html`<li class="enc-${encres[i % encres.length]}">${c.lien(k, { texte: html`<span class="folio" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span><span class="nav-nom">${c.t(`pages.${k}.nav`)}</span>` })}</li>`)}</ul>
+  </nav>
 </header>
 <div id="menu" data-menu role="dialog" aria-modal="true" aria-label="${c.s('commun.menu')}">
   ${coins()}
+  <p class="menu-sansjs-fermer"><a href="#menu-ferme">${c.t('commun.fermer')}</a></p>
   <ul>${navigation(c).map((k, i) => html`<li style="--i:${i}">${c.lien(k, { classe: 'menu-lien' })}</li>`)}</ul>
   <p class="menu-actions"><a class="bouton" href="${c.url('contact', 'devis')}" data-libelle="${c.libelle('contact')}">${c.t('commun.devis')}</a> <a class="bouton bouton--contour" href="tel:${c.site.contact.telephoneLien}">${c.t('commun.appeler')} ${c.site.contact.telephone}</a></p>
   <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="${c.s('commun.calmeReduire')}" data-libelle-retablir="${c.s('commun.calmeRetablir')}" data-libelle-systeme="${c.s('commun.calmeSysteme')}"><span data-libelle-bouton>${c.t('commun.calmeReduire')}</span></button></p>
