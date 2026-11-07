@@ -211,7 +211,7 @@
           "etape": "livraison",
           "budget": 5,
           "debut": "2026-11-06T19:56:00+01:00",
-          "fin": ""
+          "fin": "2026-11-06T20:00:00+01:00"
         }
       ],
       "attentes": [
@@ -240,6 +240,45 @@
       "effetsRetires": [],
       "grilleDispenses": {},
       "notes": "Demande du client à 18:25 : un vrai en-tête sur ordinateur (à 1000 px, le bouton Menu remplaçait les liens). Premier audit complet de la v2 arrêté pour le refaire sur la v3."
+    },
+    {
+      "version": 4,
+      "skill": "v10.3",
+      "perimetre": [
+        "print-web : dépliant du héros et scène du dépliant"
+      ],
+      "etapes": [
+        {
+          "etape": "corrections : dépliant fermé du héros, ordre d'ouverture du dépliant",
+          "budget": 15,
+          "debut": "2026-11-07T18:03:00+01:00",
+          "fin": "2026-11-07T18:06:00+01:00"
+        },
+        {
+          "etape": "audit complet ciblé sur /print-web",
+          "budget": 15,
+          "debut": "2026-11-07T18:06:00+01:00",
+          "fin": "2026-11-07T18:13:00+01:00"
+        },
+        {
+          "etape": "livraison",
+          "budget": 5,
+          "debut": "2026-11-07T18:13:00+01:00",
+          "fin": "2026-11-07T18:16:00+01:00"
+        }
+      ],
+      "attentes": [],
+      "allersRetours": 1,
+      "modules": [],
+      "audit": {
+        "niveau": "complet (page /print-web)",
+        "echecsPremierPassage": 0,
+        "relances": 0,
+        "corrections": []
+      },
+      "effetsRetires": [],
+      "grilleDispenses": {},
+      "notes": "Retour du client le 7 novembre à 18:02 : le petit dépliant du héros s'ouvrait sur une page blanche et la couverture disparaissait à mi-course ; dans la scène du dépliant, le volet de gauche sortait de derrière le volet du milieu pendant que la couverture était encore fermée, et rien ne bougeait sur le premier tiers du défilement."
     }
   ]
 }

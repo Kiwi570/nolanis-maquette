@@ -2,10 +2,10 @@
    les boucles, les mesures et la bibliothèque d'effets (data-anime, data-fx, data-survol) ; ici, seulement
    ce qui est propre à Nolanis. Intro (moins de 3 s) : traits de coupe, logo imprimé en trois passages,
    repère de calage qui glisse jusqu'à l'objet d'ouverture de la page (versObjet), puis la page s'ouvre sur lui. */
-import { demarrer, etat, versObjet } from './socle/index.js?v=3';
-import { initCalage, calage, quadriAuDefilement, imprimer, encre, fil, liasse, imposition, etapes, sechoir, enveloppe, titresQuadri } from './effets-nolanis.js?v=3';
-import { depliant, cheminDeFer, compteFils, planche, montage, devis, mouvementsPages } from './pages-nolanis.js?v=3';
-import { poste, delai, essai, presentoir, trajet, panne, molette, mouvementsV2, ouvrirV2, etatFinalV2 } from './pages-v2.js?v=3';
+import { demarrer, etat, versObjet } from './socle/index.js?v=4';
+import { initCalage, calage, quadriAuDefilement, imprimer, encre, fil, liasse, imposition, etapes, sechoir, enveloppe, titresQuadri } from './effets-nolanis.js?v=4';
+import { depliant, cheminDeFer, compteFils, planche, montage, devis, mouvementsPages } from './pages-nolanis.js?v=4';
+import { poste, delai, essai, presentoir, trajet, panne, molette, mouvementsV2, ouvrirV2, etatFinalV2 } from './pages-v2.js?v=4';
 
 const gsap = window.gsap;
 const $ = (s) => document.querySelector(s);

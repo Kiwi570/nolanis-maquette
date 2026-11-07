@@ -2,7 +2,10 @@
    scène épinglée du dépliant trois volets (10 supports imprimés) ; la mise en page passe à l'écran (6 services web) ;
    réalisations suspendues au séchoir ; appel au devis prérempli. */
 import { html } from '../../outils/gabarit.mjs';
-import { repere, coins } from '../gabarits/commun.mjs';
+import { repere, coins, barreControle } from '../gabarits/commun.mjs';
+
+/* Miniature d'un volet intérieur (formes seulement, aucun texte) pour le dépliant fermé du héros. */
+const mini = (encre, lignes, image) => html`<span class="mini enc-${encre}"><i class="mini-num"></i><i class="mini-titre"></i>${Array.from({ length: lignes }, () => html`<i class="mini-ligne"></i>`)}<i class="mini-image mini-image--${image}"></i></span>`;
 
 export const page = { cle: 'print-web', fichier: 'print-web', imagePartage: 'grok/service-print-1040.webp' };
 
@@ -24,8 +27,11 @@ export default (c) => {
     <p class="hero-actions" data-anime="gsap">${c.lien('contact', { ancre: 'devis', params: 'service=print', classe: 'bouton', texte: c.t('printweb.action'), attrs: 'data-action-principale data-survol="magnetique"' })} <span class="hero-info" data-info-cle>${c.t('printweb.info')}</span></p>
   </div>
   <div class="depliant-ferme" data-iris-centre data-effet="depliant-couverture" role="img" aria-label="${c.s('printweb.couverture')}">
-    <span class="volet-f volet-f--dessous" aria-hidden="true"></span>
-    <span class="volet-f volet-f--couverture" aria-hidden="true">${repere()}<span class="couverture-titre">Print · Web</span><span class="couverture-bande"></span></span>
+    <span class="volet-f volet-f--dessous" aria-hidden="true">${mini('m', 3, 'nuancier')}</span>
+    <span class="volet-f volet-f--couverture" aria-hidden="true">
+      <span class="face face--avant">${repere()}<span class="couverture-titre">Print · Web</span><span class="couverture-bande"></span></span>
+      <span class="face face--arriere">${mini('c', 4, 'papier')}</span>
+    </span>
   </div>
 </section>
 
@@ -36,7 +42,7 @@ export default (c) => {
       <p class="intro">${c.t('printweb.depliantIntro')}</p>
     </div>
     <div class="depliant" data-tient data-visuel>
-      ${p.volets.map((v, i) => html`<article class="volet enc-${v.encre}" data-effet="depliant">${i !== 1 ? html`<span class="verso" aria-hidden="true">${repere()}<span>Print · Web</span></span>` : ''}
+      ${p.volets.map((v, i) => html`<article class="volet enc-${v.encre}" data-effet="depliant">${i === 2 ? html`<span class="verso" aria-hidden="true">${repere()}<span>Print · Web</span></span>` : ''}${i === 0 ? html`<span class="verso verso--contact" aria-hidden="true">${barreControle('barre-controle--verso')}<span class="verso-nom">Nolanis</span><span class="verso-ligne">Strasbourg</span><span class="verso-ligne">${c.site.contact.telephone}</span></span>` : ''}
         <p class="volet-num">${c.t('printweb.volet')} ${i + 1} / 3</p>
         <h3>${v.titre}</h3>
         <ul>${v.liste.map((l) => html`<li>${l}</li>`)}</ul>

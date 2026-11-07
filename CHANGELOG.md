@@ -2,6 +2,14 @@
 
 Chaque version ajoute sa partie en tête de ce fichier, construite en comparant l'archive précédente et la nouvelle, jamais de mémoire.
 
+## v4 — le dépliant de Print & Web
+
+Comparaison faite entre nolanis-maquette-v3.zip et ce dossier : seuls la page Print & Web, la feuille de style et `pages-nolanis.js` changent (plus le numéro de version des fichiers).
+
+- **Petit dépliant du héros** : la couverture a maintenant deux faces. En s'ouvrant au défilement, elle montre l'intérieur du volet de gauche et découvre celui de droite (titres, lignes, nuancier et papeterie en miniature), au lieu d'une page blanche ; elle ne disparaît plus à mi-course et finit ouverte presque à plat.
+- **Scène « Le dépliant des imprimés »** : l'ouverture suit l'ordre d'un vrai dépliant. La couverture (volet 3) s'ouvre d'abord, dès le début du défilement, et découvre le dos du volet 1 (Nolanis, Strasbourg, téléphone) ; puis le volet 1 s'ouvre et le dépliant reste à plat sur la fin. Avant, le volet 1 sortait de derrière le volet du milieu pendant que la couverture était encore fermée, et rien ne bougeait sur le premier tiers du défilement.
+- Mouvements adoucis (départ et arrivée en douceur).
+
 ## v3 — un vrai en-tête sur ordinateur
 
 Comparaison faite entre nolanis-maquette-v2.zip et ce dossier : seuls l'en-tête, la feuille de style, `site.js` et deux textes changent (plus le numéro de version des fichiers).

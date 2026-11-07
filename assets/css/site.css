@@ -366,9 +366,30 @@ html.calme .quadri { text-shadow: none; }
 .op-print .hero-actions { justify-content: center; }
 .depliant-ferme { position: relative; z-index: 2; align-self: start; height: clamp(150px, calc(100svh - var(--entete-h) - 470px), 330px); aspect-ratio: 99 / 210; margin-top: clamp(14px, 3vh, 32px); perspective: 1400px; }
 .depliant-ferme .volet-f { position: absolute; inset: 0; background: #fbf9f4; box-shadow: var(--ombre-feuille); transform-origin: 0 50%; }
-.depliant-ferme .volet-f--dessous { transform: translateX(6px) rotate(1.2deg); background: #f6f2ea; }
-.depliant-ferme .volet-f--couverture { display: grid; place-items: center; align-content: center; gap: 12px; padding: 16px; transform: rotateY(var(--ouvre, 0deg)); backface-visibility: hidden; }
-.depliant-ferme .volet-f--couverture .repere { width: 44%; color: var(--encre); }
+.depliant-ferme .volet-f--dessous { transform: translateX(3px); background: #f8f5ee; }
+/* La couverture a deux faces : en s'ouvrant, elle montre l'intérieur du volet de gauche, et découvre celui de droite. */
+.depliant-ferme .volet-f--couverture { background: none; box-shadow: none; transform-style: preserve-3d; transform: rotateY(var(--ouvre, 0deg)); }
+.depliant-ferme .face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; background: #fbf9f4; box-shadow: var(--ombre-feuille); }
+.depliant-ferme .face--avant { display: grid; place-items: center; align-content: center; gap: 12px; padding: 16px; }
+.depliant-ferme .face--arriere { transform: rotateY(180deg); background: #f8f5ee; }
+.depliant-ferme .face--avant .repere { width: 44%; color: var(--encre); }
+.depliant-ferme .mini { position: absolute; inset: 9% 11%; display: flex; flex-direction: column; gap: 5%; }
+.depliant-ferme .mini i { display: block; flex: none; }
+.depliant-ferme .mini-num { width: 34%; height: 3%; background: linear-gradient(90deg, var(--pastille) 0 18%, transparent 18% 28%, var(--papier-3) 28%); }
+.depliant-ferme .mini-titre { width: 82%; height: 6%; background: var(--encre); margin-bottom: 2%; }
+.depliant-ferme .mini-ligne { width: 100%; height: 0; border-top: 1px solid var(--ligne); padding-top: 6%; box-sizing: content-box; }
+.depliant-ferme .mini-image { flex: 1 1 auto !important; margin-top: 4%; }
+.depliant-ferme .mini-image--nuancier { background:
+  radial-gradient(circle at 64% 74%, var(--cyan) 0 7%, transparent 7.6%),
+  radial-gradient(circle at 82% 60%, var(--magenta) 0 6%, transparent 6.6%),
+  radial-gradient(circle at 80% 86%, var(--jaune) 0 6%, transparent 6.6%),
+  conic-gradient(from -8deg at 16% 92%, var(--cyan) 0 11deg, transparent 0 13deg, var(--magenta) 0 24deg, transparent 0 26deg, var(--jaune) 0 37deg, transparent 0 39deg, var(--violet) 0 50deg, transparent 0 52deg, var(--encre) 0 63deg, transparent 0),
+  #eee8dc; }
+.depliant-ferme .mini-image--papier { background:
+  linear-gradient(#fff, #fff) 22% 26% / 34% 30% no-repeat,
+  linear-gradient(#fbf9f4, #fbf9f4) 74% 38% / 30% 42% no-repeat,
+  linear-gradient(#f4efe5, #f4efe5) 40% 84% / 44% 26% no-repeat,
+  #c9ad86; }
 .depliant-ferme .couverture-titre { font-family: var(--police-titres); font-size: clamp(1.2rem, 1rem + 1vw, 1.7rem); line-height: 1.05; }
 .depliant-ferme .couverture-bande { position: absolute; left: 0; right: 0; bottom: 0; height: 16%; background: linear-gradient(90deg, var(--cyan) 0 33.3%, var(--magenta) 0 66.6%, var(--jaune) 0); }
 @media (max-width: 760px) { .op-print { min-height: 0; padding-bottom: 48px; } .depliant-ferme { height: 190px; } }
@@ -642,6 +663,13 @@ html.calme .couverture { transform: rotate(3deg); }
 @media (max-width: 699px) { .fic__svg { display: none; } }
 .volet .verso { position: absolute; inset: 0; z-index: 3; display: grid; place-content: center; justify-items: center; gap: 10px; background: #fbf9f4; transform: rotateY(180deg); backface-visibility: hidden; -webkit-backface-visibility: hidden; font-family: var(--police-titres); font-size: 1.4rem; }
 .volet .verso .repere { width: 64px; color: var(--encre); }
+.volet .verso--contact { gap: 8px; font-size: 1.1rem; }
+.volet .verso--contact .verso-nom { font-size: 1.6rem; }
+.volet .verso--contact .verso-ligne { font-family: var(--police-mono); font-size: max(12px, .8rem); letter-spacing: .1em; color: var(--texte-doux); }
+.volet .verso--contact::after { display: none; }
+.barre-controle--verso { margin-bottom: 6px; }
+/* Ordre des couches tant que le dépliant est plié : la couverture (volet 3) dessus, puis le volet 1, puis le volet du milieu. */
+@media (min-width: 761px) { .depliant .volet:nth-child(3) { z-index: 3; } .depliant .volet:nth-child(1) { z-index: 2; } .depliant .volet:nth-child(2) { z-index: 1; } }
 .volet .verso::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 14%; background: linear-gradient(90deg, var(--cyan) 0 33.3%, var(--magenta) 0 66.6%, var(--jaune) 0); }
 @media (max-width: 760px) { .volet .verso { display: none; } }
 .appel-encre { background: var(--encre); color: var(--papier); }

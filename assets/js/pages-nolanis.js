@@ -1,7 +1,7 @@
 /* Effets des pages intérieures de Nolanis : dépliant (Print & Web), chemin de fer (Publicité),
    table lumineuse, compte-fils, planche contact et montage (Photo & vidéo), devis et tampon BON À TIRER (Contact). */
-import { boucle, etat, rafraichir, suivre, lacher } from './socle/index.js?v=3';
-import { etroit, scrubVar } from './effets-nolanis.js?v=3';
+import { boucle, etat, rafraichir, suivre, lacher } from './socle/index.js?v=4';
+import { etroit, scrubVar } from './effets-nolanis.js?v=4';
 
 const gsap = window.gsap;
 const ST = window.ScrollTrigger;
@@ -14,8 +14,10 @@ export function depliant() {
   const scene = $('.depliant-scene'); if (!scene) return;
   const volets = $$('.volet', scene);
   const g = volets[0], d = volets[2], m = volets[1];
+  const lisse = (x0, x1, x) => { const t = borne((x - x0) / (x1 - x0), 0, 1); return t * t * (3 - 2 * t); };
   const poser = (p) => {
-    const a = borne(p * 1.25, 0, 1), b = borne(p * 1.25 - .25, 0, 1);
+    /* La couverture (volet 3) s'ouvre d'abord, puis le volet 1 qu'elle recouvrait ; le dépliant reste ouvert à plat sur la fin. */
+    const b = lisse(.03, .46, p), a = lisse(.44, .88, p);
     if (!etroit()) {
       g.style.transform = `rotateY(${(-172 * (1 - a)).toFixed(1)}deg)`; g.style.setProperty('--pli', (.35 * (1 - a)).toFixed(3));
       d.style.transform = `rotateY(${(172 * (1 - b)).toFixed(1)}deg)`; d.style.setProperty('--pli', (.35 * (1 - b)).toFixed(3));
@@ -242,7 +244,7 @@ export function devis() {
 /* ---------- Petits mouvements liés au défilement (variables CSS) ---------- */
 export function mouvementsPages() {
   const ouv = $('.op-print');
-  if (ouv) scrubVar($('.volet-f--couverture'), '--ouvre', -28, -150, 'deg', { trigger: ouv, start: 'top top', end: 'bottom 35%', calme: 0 });
+  if (ouv) scrubVar($('.volet-f--couverture'), '--ouvre', -28, -164, 'deg', { trigger: ouv, start: 'top top', end: 'bottom 45%', calme: 0 });
   const pub = $('.op-pub');
   if (pub) { scrubVar($('.couverture'), '--rot', 6, -3, 'deg', { trigger: pub, start: 'top top', end: 'bottom top', calme: .3 }); scrubVar($('.couverture'), '--ty', 0, -60, 'px', { trigger: pub, start: 'top top', end: 'bottom top', calme: 0 }); }
   const ct = $('.op-contact');
